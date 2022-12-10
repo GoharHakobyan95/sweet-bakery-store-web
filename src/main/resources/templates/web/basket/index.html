@@ -1,0 +1,39 @@
+﻿<a class="ps-cart__toggle" href="/cart"><span><i th:text="${basketDto.basketProductDtos.size()}"></i></span><i
+        class="ps-icon--shopping-cart"></i></a>
+<div class="ps-cart__listing">
+    <div class="ps-cart__content">
+        <div class="ps-cart-item" th:each="basket:${basketDto.basketProductDtos}">
+            <a href="/cart" class="ps-cart-item__close remove" title="Remove this item"
+               data-key="fc221309746013ac554571fbd180e1c8"
+               th:attr="data-product_id=${basket.product.id}"
+               data-product_sku="HGEGX27"></a>
+            <div class="ps-cart-item__thumbnail">
+                <a href="https://warethemes.com/wordpress/bakery/product/beckys-snickerdoodle/">
+                    <img width="60" height="65"
+                         th:src="@{/products/getImage(fileName=${basket.product.productPic})}"
+                         class="attachment-noubakery_60x65 size-noubakery_60x65 wp-image-249" alt="" loading="lazy"></a>
+            </div>
+            <div class="ps-cart-item__content">
+                <a class="ps-cart-item__title " th:text="${basket.product.name}"></a>
+                <p>
+                    <span>Quantity:<i th:text="${basket.quantity}">1</i></span>
+                    <span>Total: <span class="woocs_special_price_code">
+                                        <span class="woocommerce-Price-amount amount"><bdi>
+                                            <span class="woocommerce-Price-currencySymbol"
+                                                  th:text="${basket.product.price+'$'}"></span></bdi></span></span></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="ps-cart__total">
+        <p>Number of items:<span th:text="${basketDto.basketProductDtos.size()}">1</span></p>
+        <p>Item Total:<span class="woocs_special_price_code">
+                                <span class="woocommerce-Price-amount amount">
+                                    <bdi><span class="woocommerce-Price-currencySymbol"
+                                               th:text="${basketDto.total+'$'}"></span></bdi></span></span></p>
+    </div>
+
+    <div class="ps-cart__footer">
+        <a class="ps-btn ps-btn--view-bag" href="/cart">View bag</a>
+    </div>
+</div>

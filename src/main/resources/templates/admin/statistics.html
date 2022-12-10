@@ -1,0 +1,151 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>::eBakery:: Dashboard</title>
+    <link rel="icon" href="/admin/favicon.ico" type="image/x-icon"> <!-- Favicon-->
+
+    <!-- plugin css file  -->
+    <link rel="stylesheet" href="/admin/dist/assets/plugin/datatables/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="/admin/dist/assets/plugin/datatables/dataTables.bootstrap5.min.css">
+    <!-- project css file  -->
+    <link rel="stylesheet" href="/ebazar.style.min.css">
+</head>
+
+<body>
+<div id="ebazar-layout" class="theme-blue">
+
+    <!-- sidebar -->
+    <div th:insert="/admin/fragments/fragment::slidebar"></div>
+    <!-- main body area -->
+    <div class="main px-lg-4 px-md-4">
+        <div th:insert="/admin/fragments/fragment::headerImport"></div>
+
+        <!-- Body: Body -->
+        <div class="body d-flex py-3">
+            <div class="container-xxl">
+                <div class="row g-3">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="tab-filter d-flex align-items-center justify-content-between mb-3 flex-wrap">
+                            <ul class="nav nav-tabs tab-card tab-body-header rounded  d-inline-flex w-sm-100">
+                                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab"
+                                                        href="#summery-today">Today</a></li>
+                                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
+                                                        href="#summery-week">Week</a></li>
+                                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#summery-month">Month</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
+                                                        href="#summery-year">Year</a></li>
+                            </ul>
+                            <div class="date-filter d-flex align-items-center mt-2 mt-sm-0 w-sm-100">
+                                <div class="input-group">
+                                    <input type="date" class="form-control">
+                                    <button class="btn btn-primary" type="button"><i class="icofont-star fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-content mt-1">
+                            <div class="tab-pane fade show active" id="summery-today">
+                                <div class="row g-1 g-sm-3 mb-3 row-deck">
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                        <div class="card">
+                                            <div class="card-body py-xl-4 py-3 d-flex flex-wrap align-items-center justify-content-between">
+                                                <div class="left-info">
+                                                    <span class="text-muted">Users</span>
+                                                    <div><span class="fs-6 fw-bold me-2"
+                                                               th:text="${usersCount}"> </span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                        <div class="card">
+                                            <div class="card-body py-xl-4 py-3 d-flex flex-wrap align-items-center justify-content-between">
+                                                <div class="left-info">
+                                                    <span class="text-muted">Orders</span>
+                                                    <div><span class="fs-6 fw-bold me-2"
+                                                               th:text="${ordersCount}">2314</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                        <div class="card">
+                                            <div class="card-body py-xl-4 py-3 d-flex flex-wrap align-items-center justify-content-between">
+                                                <div class="left-info">
+                                                    <span class="text-muted">Categories</span>
+                                                    <div><span class="fs-6 fw-bold me-2"
+                                                               th:text="${categoriesCount}"> </span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                        <div class="card">
+                                            <div class="card-body py-xl-4 py-3 d-flex flex-wrap align-items-center justify-content-between">
+                                                <div class="left-info">
+                                                    <span class="text-muted">Total Sale</span>
+                                                    <div><span class="fs-6 fw-bold me-2"   th:text="${productsSale}">AMD</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                        <div class="card">
+                                            <div class="card-body py-xl-4 py-3 d-flex flex-wrap align-items-center justify-content-between">
+                                                <div class="left-info">
+                                                    <span class="text-muted">Total Products</span>
+                                                    <div><span class="fs-6 fw-bold me-2"
+                                                               th:text="${productsCount}"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                        <div class="card">
+                                            <div class="card-body py-xl-4 py-3 d-flex flex-wrap align-items-center justify-content-between">
+                                                <div class="left-info">
+                                                    <span class="text-muted">Favorite products</span>
+                                                    <div><span class="fs-6 fw-bold me-2"
+                                                               th:text="${favoriteProductsCount}"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- row end -->
+                            </div>
+                        </div><!-- Row end  -->
+                        <!-- Row end  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Jquery Core Js -->
+        <script src="/admin/dist/assets/bundles/libscripts.bundle.js"></script>
+        <!-- Plugin Js -->
+        <script src="/admin/dist/assets/bundles/apexcharts.bundle.js"></script>
+        <script src="/admin/dist/assets/bundles/dataTables.bundle.js"></script>
+        <script src="/admin/dist/assets/js/page/index.js"></script>
+        <script src="/admin/maps/api/js?key=AIzaSyB1Jr7axGGkwvHRnNfoOzoVRFV3yOPHJEU&callback=myMap"></script>
+        <!-- Jquery Page Js -->
+        <script src="/admin/dist/assets/js/template.js"></script>
+        <script>
+            $('#myDataTable')
+                .addClass('nowrap')
+                .dataTable({
+                    responsive: true,
+                    columnDefs: [{
+                        targets: [-1, -3],
+                        className: 'dt-body-right'
+                    }]
+                });
+        </script>
+    </div>
+</div>
+</body>
+</html>

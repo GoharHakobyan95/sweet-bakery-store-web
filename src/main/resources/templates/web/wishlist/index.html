@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Wishlist &#8211; Noucake</title>
+    <th:block th:insert="web/fragments/fragment.html::headerImport"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::global-styles-inline-css"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::js-css"></th:block>
+</head>
+<body class="page-template page-template-page-templates page-template-wishlist page-template-page-templateswishlist-php page page-id-222 theme-noucake woocommerce-no-js page-init wpb-js-composer js-comp-ver-6.8.0 vc_responsive currency-usd">
+<th:block th:insert="web/fragments/fragment.html::table"></th:block>
+<div class="ps-searchbox">
+    <div class="ps-searchbox__remove"><i class="fa fa-remove"></i></div>
+    <div class="container">
+        <header>
+            <p>Enter your keywords:</p>
+            <form id="search_header" class="search_header_product " method="get"
+                  action="/bakery/">
+                <input class="form-control" type="text" value="" name="s" autocomplete="off">
+
+                <input type="hidden" name="post_type" value="product">
+                <button type="submit"><i class="ps-icon--search"></i></button>
+            </form>
+        </header>
+        <div class="ps-searchbox__result"></div>
+        <footer class="text-center"><a class="ps-searchbox__morelink" href="#">VIEW ALL RESULT</a></footer>
+    </div>
+</div>
+<div class="header--sidebar"></div>
+<header class="header" data-responsive="1199">
+    <th:block th:insert="web/fragments/fragment.html::USD-EURImport"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::class-navigation-import"></th:block>
+</header>
+<nav class="ps-mobile-nav hidden-lg hidden-md">
+    <ul class="ps-list--footer">
+        <li><a href="/"><i class="ps-icon--heart"></i><span>Wishlist</span></a></li>
+
+        <li><a href="/my_account"><i class="ps-icon--profile"></i><span>Account</span></a></li>
+
+        <li><a class="ps-search-btn" href="#"><i class="ps-icon--search"></i><span>Search</span></a></li>
+
+        <li><a class="ps-cart-count" href="/cart"><i class="ps-icon--shopping-cart"></i><span
+                class="quantity"><i class="mobile_cart_content">0</i></span><span>Cart</span></a></li>
+    </ul>
+</nav>
+<div class="page-wrap">
+    <div class="ps-section--hero">
+        <img src="/assets/wp-content2/themes/bakery/assets/images/hero/01.jpg" alt="Wishlist">
+        <div class="ps-section__content text-center">
+            <h3 class="ps-section__title">Wishlist</h3>
+
+            <div class="ps-breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="/">Home</a></li>
+                    <li class="active">Wishlist</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+    <div class="ps-section--cart pt-100 pb-100" m>
+        <div class="container">
+            <div class="ps-whish-list">
+                <h3>Wishlist</h3>
+                <div class="table-responsive" >
+                    <table class="table products">
+                        <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                        </tr>
+                        </thead>
+                        <tbody th:each="favoriteProduct: ${favProducts}">
+                        <tr>
+                            <td>
+                                <img th:if="${favoriteProduct.getProduct().getProductPic() != null}"
+                                     th:src="@{/products/getImage(fileName=${favoriteProduct.product.productPic})}">
+                            </td>
+                            <td th:text="${favoriteProduct.product.name}">
+                                <strong th:value="${favoriteProduct.getProduct().name}"></strong>
+                            </td>
+                            <td th:text="${favoriteProduct.product.price}">
+                                <strong th:value="${favoriteProduct.getProduct().price}"></strong>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div th:if="${favProducts.totalPages > 0}" class="page"
+                         th:each="pageNumber : ${pageNumbers}">
+                        <a th:href="@{/user/favorite-products(size=${favProducts.size}, page=${pageNumber})}"
+                           th:text="${pageNumber}"
+                           th:class="${pageNumber==favProducts.number + 1} ? active"></a>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <a class="ps-btn mr-5 mb-10 btn-black" href="/products/shop">
+                        Return to shop </a>
+                    <a href="/cart" class="ps-btn btn-black">
+                        Go to cart </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div><!--End .page-wrap-->
+
+<div th:insert="web/fragments/fragment.html::aboutUs"></div>
+<div th:insert="web/fragments/fragment.html::footerImport"></div>
+<div th:insert="web/fragments/fragment.html::underFooterImport"></div>
+<div th:insert="web/fragments/fragment.html::text_javascript"></div>
+
+</body>
+</html>

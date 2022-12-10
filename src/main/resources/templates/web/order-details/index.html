@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Order details</title>
+    <link rel="icon" href="/images/2017/06/favicon.png">
+    <link rel="icon" href="/images/2017/06/favicon.png">
+    <link rel="apple-touch-icon" href="/images/2017/06/favicon.png">
+    <th:block th:insert="web/fragments/fragment.html::headerImport"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::global-styles-inline-css"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::js-css"></th:block>
+
+<body class="page-template page-template-page-templates page-template-full-width page-template-page-templatesfull-width-php page page-id-7 theme-noucake woocommerce-account woocommerce-page woocommerce-no-js page-init wpb-js-composer js-comp-ver-6.8.0 vc_responsive currency-usd">
+<th:block th:insert="web/fragments/fragment.html::table"></th:block>
+
+<div class="ps-searchbox__remove"><i class="fa fa-remove"></i></div>
+<div class="container">
+</div>
+<div class="header--sidebar"></div>
+<header class="header" data-responsive="1199">
+    <th:block th:insert="web/fragments/fragment.html::USD-EURImport"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::class-navigation-import"></th:block>
+</header>
+
+<nav class="ps-mobile-nav hidden-lg hidden-md">
+    <ul class="ps-list--footer">
+        <li><a href="/wishlist"><i class="ps-icon--heart"></i><span>Wishlist</span></a></li>
+
+        <li><a href="/"><i class="ps-icon--profile"></i><span>Account</span></a></li>
+
+        <li><a class="ps-search-btn" href="#"><i class="ps-icon--search"></i><span>Search</span></a></li>
+
+        <li><a class="ps-cart-count" href="/cart"><i class="ps-icon--shopping-cart"></i><span
+                class="quantity"><i class="mobile_cart_content">0</i></span><span>Cart</span></a></li>
+    </ul>
+</nav>
+
+<div class="page-wrap">
+    <div class="ps-section--hero">
+        <img src="https://warethemes.com/wordpress/bakery/wp-content/themes/bakery/assets/images/hero/01.jpg"
+             alt="Checkout">
+        <div class="ps-section__content text-center">
+            <h3 class="ps-section__title">Order Details</h3>
+            <div class="ps-breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/user/order-details">Order Details</a></li>
+                    <li class="active">Order received</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+    <div class="ps-section--checkout pt-80 pb-80">
+        <div class="container">
+            <div class="woocommerce">
+                <div class="woocommerce-order">
+
+
+                    <p class="woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received">
+                        Thank you. Your order has been received.</p>
+
+                    <ul class="woocommerce-order-overview woocommerce-thankyou-order-details order_details">
+
+                        <li class="woocommerce-order-overview__order order">
+                            Order number: <strong th:object="${order}"></strong>
+                        </li>
+
+                        <li class="woocommerce-order-overview__date date">
+                            Date: <strong th:value="${order.getOrderDate()}"> </strong>
+                        </li>
+
+                        <li class=" woocommerce-order-overview__total total">
+                            Product id: <strong><span class="woocommerce-Price-amount amount"><bdi><span
+                                class="woocommerce-Price-currencySymbol"
+                                th:value="${order.getProduct().getId()}">;</span></bdi></span></strong>
+                        </li>
+                        <li class=" woocommerce-order-overview__total total">
+                            Total: <strong><span class="woocommerce-Price-amount amount"><bdi><span
+                                class="woocommerce-Price-currencySymbol"
+                                th:value="${order.address}">;</span></bdi></span></strong>
+                        </li>
+                        <li class="woocommerce-order-overview__payment-method method">
+                            Payment method: <strong>Payed</strong>
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div><!--End .page-wrap-->
+
+<div th:insert="web/fragments/fragment.html::aboutUs"></div>
+<div th:insert="web/fragments/fragment.html::footerImport"></div>
+<div th:insert="web/fragments/fragment.html::underFooterImport"></div>
+<div th:insert="web/fragments/fragment.html::text_javascript"></div>
+
+</body>
+</html>

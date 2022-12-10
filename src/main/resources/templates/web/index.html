@@ -1,0 +1,1569 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Noucake &#8211; Bakery wordpress theme</title>
+    <link rel="icon" href="/images/2017/06/favicon.png">
+    <link rel="icon" href="/images/2017/06/favicon.png">
+    <link rel="apple-touch-icon" href="/images/2017/06/favicon.png">
+    <th:block th:insert="web/fragments/fragment.html::headerImport"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::global-styles-inline-css"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::js-css"></th:block>
+
+</head>
+<body class="home page-template page-template-page-templates page-template-full-width page-template-page-templatesfull-width-php page page-id-327 theme-noucake woocommerce-no-js page-init wpb-js-composer js-comp-ver-6.8.0 vc_responsive currency-eur">
+<th:block th:insert="web/fragments/fragment.html::table"></th:block>
+<div class="ps-searchbox">
+    <div class="ps-searchbox__remove"><i class="fa fa-remove"></i></div>
+    <div class="container">
+        <header>
+            <p>Enter your keywords:</p>
+            <form id="search_header" class="search_header_product " method="get"
+                  action="/bakery/">
+                <input class="form-control" type="text" value="" name="s" autocomplete="off">
+
+                <input type="hidden" name="post_type" value="product">
+                <button type="submit"><i class="ps-icon--search"></i></button>
+            </form>
+        </header>
+        <div class="ps-searchbox__result"></div>
+        <footer class="text-center"><a class="ps-searchbox__morelink" href="#">VIEW ALL RESULT</a></footer>
+    </div>
+</div>
+<div class="header--sidebar"></div>
+<header class="header" data-responsive="1199">
+
+    <th:block th:insert="web/fragments/fragment.html::USD-EURImport"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::class-navigation-import"></th:block>
+
+</header>
+<nav class="ps-mobile-nav hidden-lg hidden-md">
+    <ul class="ps-list--footer">
+        <li><a href="/wishlist"><i class="ps-icon--heart"></i><span>Wishlist</span></a></li>
+
+        <li><a href="/my_account"><i class="ps-icon--profile"></i><span>Account</span></a></li>
+
+        <li><a class="ps-search-btn" href="#"><i class="ps-icon--search"></i><span>Search</span></a></li>
+
+        <li><a class="ps-cart-count" href="/cart"><i class="ps-icon--shopping-cart"></i><span class="quantity"><i
+                class="mobile_cart_content">0</i></span><span>Cart</span></a></li>
+    </ul>
+</nav>
+<div class="page-wrap">
+    <div class="ps-section row wpb_row vc_row-fluid">
+        <div class="ps-banner--home-1 wpb_column vc_column_container vc_col-sm-12">
+            <div class="vc_column-inner">
+                <div class="wpb_wrapper">
+                    <!-- START Home #1 REVOLUTION SLIDER 6.5.9 --><p class="rs-p-wp-fix"></p>
+                    <rs-module-wrap id="rev_slider_14_1_wrapper" data-source="gallery"
+                                    style="visibility:hidden;background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+                        <rs-module id="rev_slider_14_1" style="" data-version="6.5.9">
+                            <rs-slides>
+                                <rs-slide style="position: absolute;" data-key="rs-32" data-title="Slide"
+                                          data-thumb="https://noucake.s3.amazonaws.com/revslider/img-slider-1.jpg"
+                                          data-anim="ms:900;r:0;e:slidingoverlay;" data-in="y:-100%;e:expo.out;">
+                                    <img src="/assets/wp-content2/plugins/revslider/public/assets/assets/dummy.png"
+                                         title="home page" class="rev-slidebg tp-rs-img rs-lazyload"
+                                         data-lazyload="https://noucake.s3.amazonaws.com/revslider/img-slider-1.jpg"
+                                         data-parallax="7" data-panzoom="d:40000;ss:100;se:150;rs:1;re:2;"
+                                         data-no-retina="">
+                                    <!--
+							-->
+                                    <rs-layer id="slider-14-slide-32-layer-1" class="Big-Title" data-type="text"
+                                              data-color="#0a0a0a" data-rsp_ch="on" data-xy="x:c;xo:-1px;y:m;yo:-100px;"
+                                              data-text="s:40,40,40,24;l:48,48,48,29;a:inherit;"
+                                              data-frame_0="y:-50px,-50px,-50px,-30px;tp:600;"
+                                              data-frame_1="x:0,0,0,0px;y:0,0,0,0px;tp:600;e:expo.out;st:400;sp:1200;sR:400;"
+                                              data-frame_999="y:-50px,-50px,-50px,-30px;o:0;tp:600;e:easeOutExpo;st:w;sp:1200;sR:7400;"
+                                              style="z-index:5;font-family:'Libre Baskerville';text-transform:uppercase;">
+                                        We Implement Sweet Dream
+                                    </rs-layer><!--
+
+							--><p id="slider-14-slide-32-layer-2" class="rs-layer" data-type="text" data-color="#4e3939"
+                                  data-rsp_ch="on" data-xy="x:c;y:m;yo:-24px;"
+                                  data-text="s:16,16,16,13;l:28,28,28,17;a:center;" data-dim="w:auto,auto,auto,465px;"
+                                  data-frame_0="y:50px,50px,50px,31px;tp:600;"
+                                  data-frame_1="x:0,0,0,0px;y:0,0,0,0px;tp:600;e:expo.out;st:700;sp:1200;sR:700;"
+                                  data-frame_999="y:-50px,-50px,-50px,-31px;o:0;tp:600;e:nothing;st:w;sp:1200;sR:7100;"
+                                  style="z-index:6;font-family:'Varela Round';">Carrot cake macaroon jelly-o dessert
+                                    cake.
+                                    Tiramisu brownie tiramisu cake.<br>
+                                    Icing powder candy canes cotton candy pie liquorice.
+                                </p><!--
+
+							-->
+                                    <rs-layer id="slider-14-slide-32-layer-3" data-type="image" data-rsp_ch="on"
+                                              data-xy="x:c;xo:-406px;yo:206px;" data-text="l:22;a:inherit;"
+                                              data-dim="w:['59px','59px','59px','59px'];h:['36px','36px','36px','36px'];"
+                                              data-frame_0="sX:0.9;sY:0.9;tp:600;"
+                                              data-frame_1="tp:600;e:expo.out;st:1000;sp:900;sR:1000;"
+                                              data-frame_999="y:175%;tp:600;e:expo.out;st:w;sp:900;sR:7100;"
+                                              data-frame_999_mask="u:t;" style="z-index:7;"><img
+                                            src="/assets/wp-content2/plugins/revslider/public/assets/assets/dummy.png"
+                                            class="tp-rs-img rs-lazyload" width="59" height="36"
+                                            data-lazyload="https://noucake.s3.amazonaws.com/revslider/shape.png"
+                                            data-no-retina="">
+                                    </rs-layer><!--
+
+							-->
+                                    <rs-layer id="slider-14-slide-32-layer-5" data-type="image" data-rsp_ch="on"
+                                              data-xy="x:c;xo:400px;yo:205px;" data-text="l:22;a:inherit;"
+                                              data-dim="w:['59px','59px','59px','59px'];h:['36px','36px','36px','36px'];"
+                                              data-frame_0="sX:0.9;sY:0.9;tp:600;"
+                                              data-frame_1="tp:600;e:expo.out;st:1000;sp:900;sR:1000;"
+                                              data-frame_999="y:175%;tp:600;e:expo.out;st:w;sp:900;sR:7100;"
+                                              data-frame_999_mask="u:t;" style="z-index:8;"><img
+                                            src="/assets/wp-content2/plugins/revslider/public/assets/assets/dummy.png"
+                                            class="tp-rs-img rs-lazyload" width="59" height="36"
+                                            data-lazyload="https://noucake.s3.amazonaws.com/revslider/shape-2.png"
+                                            data-no-retina="">
+                                    </rs-layer><!--
+
+							-->
+                                    <rs-layer id="slider-14-slide-32-layer-7" class="big-button rev-btn rev-hiddenicon"
+                                              data-type="button" data-color="rgba(255,255,255,1)"
+                                              data-xy="x:c;y:m;yo:49px;" data-text="s:17;l:17;a:inherit;"
+                                              data-rsp_bd="off" data-padding="t:12;r:35;b:12;l:35;"
+                                              data-border="bor:30px,30px,30px,30px;" data-frame_0="y:50px;tp:600;"
+                                              data-frame_1="tp:600;e:expo.out;st:1200;sp:900;sR:1200;"
+                                              data-frame_999="y:50px;o:0;tp:600;e:expo.out;st:w;sp:900;sR:6900;"
+                                              style="z-index:9;background-color:rgba(0,0,0,0.75);font-family:'Varela Round';outline:none;box-shadow:0 6px 15px 0 rgba(36,37,38,0.15);box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;background-image:linear-gradient(-90deg, #EE7560 0%, #FF5858 97%);border-radius:100px;">
+                                        TRY OUR CUPCAKES <i class="fa-chevron-right"></i>
+                                    </rs-layer><!--
+-->                        </rs-slide>
+                                <rs-slide style="position: absolute;" data-key="rs-33" data-title="Slide"
+                                          data-thumb="https://noucake.s3.amazonaws.com/revslider/slider-21.jpg"
+                                          data-anim="ms:900;r:0;e:slidingoverlay;" data-in="y:-100%;e:expo.out;">
+                                    <img src="/assets/wp-content2/plugins/revslider/public/assets/assets/dummy.png"
+                                         title="home page" class="rev-slidebg tp-rs-img rs-lazyload"
+                                         data-lazyload="https://noucake.s3.amazonaws.com/revslider/slider-21.jpg"
+                                         data-parallax="7" data-panzoom="d:40000;ss:100;se:150;rs:1;re:2;"
+                                         data-no-retina="">
+                                    <!--
+							-->
+                                    <rs-layer id="slider-14-slide-33-layer-1" class="Big-Title" data-type="text"
+                                              data-color="#0a0a0a" data-rsp_ch="on" data-xy="x:c;xo:-1px;y:m;yo:-100px;"
+                                              data-text="s:40,40,40,26;l:48,48,48,31;a:inherit;"
+                                              data-frame_0="y:-50px,-50px,-50px,-32px;tp:600;"
+                                              data-frame_1="x:0,0,0,0px;y:0,0,0,0px;tp:600;e:expo.out;st:400;sp:1200;sR:400;"
+                                              data-frame_999="y:-50px,-50px,-50px,-32px;o:0;tp:600;e:easeOutExpo;st:w;sp:1200;sR:7400;"
+                                              style="z-index:5;font-family:'Libre Baskerville';text-transform:uppercase;">
+                                        A little bliss in every bite
+                                    </rs-layer><!--
+
+							--><p id="slider-14-slide-33-layer-2" class="rs-layer" data-type="text" data-color="#4e3939"
+                                  data-rsp_ch="on" data-xy="x:c;y:m;yo:-24px;" data-text="s:16,16,16,13;l:28;a:center;"
+                                  data-frame_0="y:50px;tp:600;" data-frame_1="tp:600;e:expo.out;st:700;sp:1200;sR:700;"
+                                  data-frame_999="y:-50px;o:0;tp:600;e:nothing;st:w;sp:1200;sR:7100;"
+                                  style="z-index:6;font-family:'Varela Round';">Macaroon liquorice sweet. Icing dessert
+                                    sweet apple pie chocolate cake. <br>
+                                    Jujubes halvah cupcake cheesecake.
+                                </p><!--
+
+							-->
+                                    <rs-layer id="slider-14-slide-33-layer-7" class="big-button rev-btn rev-hiddenicon"
+                                              data-type="button" data-color="rgba(255,255,255,1)"
+                                              data-xy="x:c;y:m;yo:49px;" data-text="s:17;l:17;a:inherit;"
+                                              data-rsp_bd="off" data-padding="t:12;r:55;b:12;l:55;"
+                                              data-border="bor:30px,30px,30px,30px;" data-frame_0="y:50px;tp:600;"
+                                              data-frame_1="tp:600;e:expo.out;st:1200;sp:900;sR:1200;"
+                                              data-frame_999="y:50px;o:0;tp:600;e:expo.out;st:w;sp:900;sR:6900;"
+                                              style="z-index:9;background-color:rgba(0,0,0,0.75);font-family:'Varela Round';outline:none;box-shadow:0 6px 15px 0 rgba(36,37,38,0.15);box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;background-image:linear-gradient(-90deg, #EE7560 0%, #FF5858 97%);border-radius:100px;">
+                                        ORDER NOW <i class="fa-chevron-right"></i>
+                                    </rs-layer><!--
+-->                        </rs-slide>
+                                <rs-slide style="position: absolute;" data-key="rs-34" data-title="Slide"
+                                          data-thumb="https://noucake.s3.amazonaws.com/revslider/slider-31.jpg"
+                                          data-anim="ms:900;r:0;e:slidingoverlay;" data-in="y:-100%;e:expo.out;">
+                                    <img src="/assets/wp-content2/plugins/revslider/public/assets/assets/dummy.png"
+                                         title="home page" class="rev-slidebg tp-rs-img rs-lazyload"
+                                         data-lazyload="https://noucake.s3.amazonaws.com/revslider/slider-31.jpg"
+                                         data-parallax="7" data-panzoom="d:40000;ss:100;se:150;rs:1;re:2;"
+                                         data-no-retina="">
+                                    <!--
+							-->
+                                    <rs-layer id="slider-14-slide-34-layer-1" class="Big-Title" data-type="text"
+                                              data-color="#0a0a0a" data-rsp_ch="on" data-xy="x:c;xo:-1px;y:m;yo:-100px;"
+                                              data-text="s:40,40,40,25;l:48;a:inherit;" data-frame_0="y:-50px;tp:600;"
+                                              data-frame_1="tp:600;e:expo.out;st:400;sp:1200;sR:400;"
+                                              data-frame_999="y:-50px;o:0;tp:600;e:easeOutExpo;st:w;sp:1200;sR:3400;"
+                                              style="z-index:5;font-family:'Libre Baskerville';text-transform:uppercase;">
+                                        Every batch from scratch
+                                    </rs-layer><!--
+
+							--><p id="slider-14-slide-34-layer-2" class="rs-layer" data-type="text" data-color="#4e3939"
+                                  data-rsp_ch="on" data-xy="x:c;y:m;yo:-24px;" data-text="s:16,16,16,13;l:28;a:center;"
+                                  data-frame_0="y:50px;tp:600;" data-frame_1="tp:600;e:expo.out;st:700;sp:1200;sR:700;"
+                                  data-frame_999="y:-50px;o:0;tp:600;e:nothing;st:w;sp:1200;sR:3100;"
+                                  style="z-index:6;font-family:'Varela Round';">Macaroon liquorice sweet. Icing dessert
+                                    sweet apple pie chocolate cake.<br>
+                                    Jujubes halvah cupcake cheesecake.
+                                </p><!--
+
+							-->
+                                    <rs-layer id="slider-14-slide-34-layer-7" class="big-button rev-btn rev-hiddenicon"
+                                              data-type="button" data-color="rgba(255,255,255,1)"
+                                              data-xy="x:c;y:m;yo:49px;" data-text="s:17;l:17;a:inherit;"
+                                              data-rsp_bd="off" data-padding="t:12;r:35;b:12;l:35;"
+                                              data-border="bor:30px,30px,30px,30px;" data-frame_0="y:50px;tp:600;"
+                                              data-frame_1="tp:600;e:expo.out;st:1200;sp:900;sR:1200;"
+                                              data-frame_999="y:50px;o:0;tp:600;e:expo.out;st:w;sp:900;sR:2900;"
+                                              style="z-index:9;background-color:rgba(0,0,0,0.75);font-family:'Varela Round';outline:none;box-shadow:0 6px 15px 0 rgba(36,37,38,0.15);box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;background-image:linear-gradient(-90deg, #EE7560 0%, #FF5858 97%);border-radius:100px;">
+                                        TRY OUR CUPCAKES <i class="fa-chevron-right"></i>
+                                    </rs-layer><!--
+-->                        </rs-slide>
+                            </rs-slides>
+                        </rs-module>
+                        <script type="text/javascript">
+                            setREVStartSize({
+                                c: 'rev_slider_14_1',
+                                rl: [1240, 1024, 778, 480],
+                                el: [650, 768, 960, 720],
+                                gw: [1240, 1024, 778, 480],
+                                gh: [650, 768, 960, 720],
+                                type: 'standard',
+                                justify: '',
+                                layout: 'fullwidth',
+                                mh: "0"
+                            });
+                            if (window.RS_MODULES !== undefined && window.RS_MODULES.modules !== undefined && window.RS_MODULES.modules["revslider141"] !== undefined) {
+                                window.RS_MODULES.modules["revslider141"].once = false;
+                                window.revapi14 = undefined;
+                                if (window.RS_MODULES.checkMinimal !== undefined) window.RS_MODULES.checkMinimal()
+                            }
+                        </script>
+                    </rs-module-wrap>
+                    <!-- END REVOLUTION SLIDER -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ps-section row wpb_row vc_row-fluid">
+        <div class="wpb_column vc_column_container vc_col-sm-12">
+            <div class="vc_column-inner">
+                <div class="wpb_wrapper">
+                    <div class="ps-section pt-80 pb-40">
+                        <div class="container">
+                            <div class="ps-countdown products">
+                                <div class="row product">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                        <img src="/images/2017/06/counter-555x431.png" alt=""></div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                                        <header class="text-center">
+                                            <div class="ps-section__top">Hot Deal Today</div>
+
+                                            <h4><a href="/products/single-page" class="ps-product__title">Vanilla
+                                                cupcake with red sugar flowers</a></h4>
+                                            <p class="p-ps-product__price">Only: <span class="woocs_price_code"
+                                                                                       data-product-id="199"><del
+                                                    aria-hidden="true"><span
+                                                    class="woocommerce-Price-amount amount"><span
+                                                    class="woocommerce-Price-currencySymbol">&pound;</span>49.14</span></del> <ins><span
+                                                    class="woocommerce-Price-amount amount"><span
+                                                    class="woocommerce-Price-currencySymbol">&pound;</span>24.15</span></ins></span>
+                                            </p>
+                                            <div class="ps-product__status row">
+                                                <div class="col-md-6 sold">Already sold: <span>30</span></div>
+                                                <div class="col-md-6 avaiable">avaiable: <span>20</span></div>
+                                            </div>
+                                            <div class="ps-product__process">
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="150"
+                                                         aria-valuemin="0" aria-valuemax="100"
+                                                         style="width: 150%;"></div>
+                                                </div>
+                                            </div>
+
+                                            <ul class="ps-countdown__time" data-time="September 30, 2022 23:59:59">
+                                                <li><span class="hours"></span>
+                                                    <p>Hours</p></li>
+                                                <li class="divider">:</li>
+                                                <li><span class="minutes"></span>
+                                                    <p>minutes</p></li>
+                                                <li class="divider">:</li>
+                                                <li><span class="seconds"></span>
+                                                    <p>Seconds</p></li>
+                                            </ul>
+
+                                            <a data-type="compare" rel="nofollow" href="/?add-to-cart=199"
+                                               data-quantity="1" data-product_id="199" data-product_sku="HGEGX12"
+                                               class="ps-btn product-item-cart button product_type_simple add_to_cart_button ajax_add_to_cart">Add
+                                                to cart<i class="fa fa-angle-right"></i></a>
+                                        </header>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ps-section row wpb_row vc_row-fluid ps-section ps-section--best-seller pt-40 pb-100">
+        <div class="container">
+            <div class="wpb_column vc_column_container vc_col-sm-12">
+                <div class="vc_column-inner">
+                    <div class="wpb_wrapper">
+                        <div class="ps-section__header text-center mb-50">
+                            <h4 class="ps-section__top">Sweet Cupcakes</h4>
+                            <h3 class="ps-section__title ps-section__title--full">BEST SELLER</h3></div>
+                    </div>
+                </div>
+            </div>
+            <div class="wpb_column vc_column_container vc_col-sm-12">
+                <div class="vc_column-inner">
+                    <div class="wpb_wrapper">
+                        <div class="ps-section__content products">
+                            <div class="owl-slider owl-slider--best-seller" data-owl-auto="true" data-owl-loop="true"
+                                 data-owl-speed="5000" data-owl-gap="30" data-owl-nav="true" data-owl-dots="false"
+                                 data-owl-animate-in="" data-owl-animate-out="" data-owl-item="4" data-owl-item-xs="1"
+                                 data-owl-item-sm="2" data-owl-item-md="3" data-owl-item-lg="4"
+                                 data-owl-nav-left="&lt;i class=&quot;ps-icon--back&quot;&gt;&lt;/i&gt;"
+                                 data-owl-nav-right="&lt;i class=&quot;ps-icon--next&quot;&gt;&lt;/i&gt;">
+
+                                <div class="post-199 product type-product status-publish has-post-thumbnail product_cat-music product_cat-singles first instock sale featured shipping-taxable purchasable product-type-simple">
+                                    <div class="ps-product" data-mh="abc">
+                                        <div class="ps-product__thumbnail">
+                                            <div class="ps-badge"><span>51%</span></div>
+                                            <a class="ps-product__overlay" href="/products/single-page"></a>
+                                            <img src="/images/2013/06/img-cake-6-524x566.jpg" class=""
+                                                 alt="Sweet Cakes">
+                                            <ul class="ps-product__action">
+
+                                                <li><a data-product_id="199" class="product-quickview popup-modal"
+                                                       href="#quickview-modal" data-effect="mfp-zoom-out"
+                                                       data-tooltip="View"><i class="ps-icon--search"></i></a></li>
+
+                                                <li><a class="product-wishlist" data-product_id="199" href="#"
+                                                       data-tooltip="Add to wishlist"><i class="ps-icon--heart"></i></a>
+                                                </li>
+
+                                                <li><a class="product-compare" data-product_id="199" href="#"
+                                                       data-tooltip="Compare"><i class="ps-icon--reload"></i></a></li>
+
+                                                <li>
+                                                    <a rel="nofollow" href="/?add-to-cart=199"
+                                                       data-quantity="1" data-product_id="199"
+                                                       data-product_sku="HGEGX12"
+                                                       class="product-item-cart button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                       data-tooltip="Add to cart"><i class="ps-icon--shopping-cart"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ps-product__content">
+                                            <a class="ps-product__title" href="/products/single-page">
+                                                Sweet Cakes </a>
+                                            <div class="ps-product__category">
+                                                <a href="/shop" rel="tag">Music</a><a
+                                                    href="/shop"
+                                                    rel="tag">Singles</a></div>
+                                            <select class="ps-rating rating-0">
+                                                <option value="0" selected='selected'>0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+
+                                            <p class="ps-product__price"><span class="woocs_price_code"
+                                                                               data-product-id="199"><del
+                                                    aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span
+                                                    class="woocommerce-Price-currencySymbol">&pound;</span>49.14</bdi></span></del> <ins><span
+                                                    class="woocommerce-Price-amount amount"><bdi><span
+                                                    class="woocommerce-Price-currencySymbol">&pound;</span>24.15</bdi></span></ins></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-198 product type-product status-publish has-post-thumbnail product_cat-albums product_cat-music  instock sale shipping-taxable purchasable product-type-simple">
+                                    <div class="ps-product" data-mh="abc">
+                                        <div class="ps-product__thumbnail">
+                                            <div class="ps-badge"><span>10%</span></div>
+                                            <a class="ps-product__overlay" href="/products/single-page"></a>
+                                            <img src="/images/2017/06/img-cake-9-524x566.jpg" class=""
+                                                 alt="Cupcake Glory">
+                                            <ul class="ps-product__action">
+
+                                                <li><a data-product_id="198" class="product-quickview popup-modal"
+                                                       href="#quickview-modal" data-effect="mfp-zoom-out"
+                                                       data-tooltip="View"><i class="ps-icon--search"></i></a></li>
+
+                                                <li><a class="product-wishlist" data-product_id="198" href="#"
+                                                       data-tooltip="Add to wishlist"><i class="ps-icon--heart"></i></a>
+                                                </li>
+
+                                                <li><a class="product-compare" data-product_id="198" href="#"
+                                                       data-tooltip="Compare"><i class="ps-icon--reload"></i></a></li>
+
+                                                <li>
+                                                    <a rel="nofollow" href="/?add-to-cart=198"
+                                                       data-quantity="1" data-product_id="198"
+                                                       data-product_sku="HGEGX13"
+                                                       class="product-item-cart button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                       data-tooltip="Add to cart"><i class="ps-icon--shopping-cart"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ps-product__content">
+                                            <a class="ps-product__title" href="/products/single-page">
+                                                Cupcake Glory </a>
+                                            <div class="ps-product__category">
+                                                <a href="/shop" rel="tag">Albums</a><a
+                                                    href="/shop" rel="tag">Music</a></div>
+                                            <select class="ps-rating rating-0">
+                                                <option value="0" selected='selected'>0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+
+                                            <p class="ps-product__price"><span class="woocs_price_code"
+                                                                               data-product-id="198"><del
+                                                    aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span
+                                                    class="woocommerce-Price-currencySymbol">&pound;</span>83.28</bdi></span></del> <ins><span
+                                                    class="woocommerce-Price-amount amount"><bdi><span
+                                                    class="woocommerce-Price-currencySymbol">&pound;</span>74.96</bdi></span></ins></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-197 product type-product status-publish has-post-thumbnail product_cat-music product_cat-singles  instock sale featured shipping-taxable purchasable product-type-simple">
+                                    <div class="ps-product" data-mh="abc">
+                                        <div class="ps-product__thumbnail">
+                                            <div class="ps-badge"><span>9%</span></div>
+                                            <a class="ps-product__overlay" href="/products/single-page"></a>
+                                            <img src="/images/2017/06/img-cake-21-524x566.jpg" class=""
+                                                 alt="cupcake queen">
+                                            <ul class="ps-product__action">
+
+                                                <li><a data-product_id="197" class="product-quickview popup-modal"
+                                                       href="#quickview-modal" data-effect="mfp-zoom-out"
+                                                       data-tooltip="View"><i class="ps-icon--search"></i></a></li>
+
+                                                <li><a class="product-wishlist" data-product_id="197" href="#"
+                                                       data-tooltip="Add to wishlist"><i class="ps-icon--heart"></i></a>
+                                                </li>
+
+                                                <li><a class="product-compare" data-product_id="197" href="#"
+                                                       data-tooltip="Compare"><i class="ps-icon--reload"></i></a></li>
+
+                                                <li>
+                                                    <a rel="nofollow" href="/?add-to-cart=197"
+                                                       data-quantity="1" data-product_id="197"
+                                                       data-product_sku="HGEGX14"
+                                                       class="product-item-cart button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                       data-tooltip="Add to cart"><i class="ps-icon--shopping-cart"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ps-product__content">
+                                            <a class="ps-product__title" href="/products/single-page">
+                                                cupcake queen </a>
+                                            <div class="ps-product__category">
+                                                <a href="/shop" rel="tag">Music</a><a
+                                                    href="/shop"
+                                                    rel="tag">Singles</a></div>
+                                            <select class="ps-rating rating-0">
+                                                <option value="0" selected='selected'>0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+
+                                            <p class="ps-product__price"><span class="woocs_price_code"
+                                                                               data-product-id="197"><del
+                                                    aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span
+                                                    class="woocommerce-Price-currencySymbol">&pound;</span>27.48</bdi></span></del> <ins><span
+                                                    class="woocommerce-Price-amount amount"><bdi><span
+                                                    class="woocommerce-Price-currencySymbol">&pound;</span>24.99</bdi></span></ins></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-196 product type-product status-publish has-post-thumbnail product_cat-albums product_cat-music last instock sale shipping-taxable purchasable product-type-simple">
+                                    <div class="ps-product" data-mh="abc">
+                                        <div class="ps-product__thumbnail">
+                                            <div class="ps-badge"><span>30%</span></div>
+                                            <a class="ps-product__overlay"
+                                               href="/products/single-page"></a>
+                                            <img src="/images/2017/06/img-cake-12-524x566.jpg" class=""
+                                                 alt="Red sugar flower">
+                                            <ul class="ps-product__action">
+
+                                                <li><a data-product_id="196" class="product-quickview popup-modal"
+                                                       href="#quickview-modal" data-effect="mfp-zoom-out"
+                                                       data-tooltip="View"><i class="ps-icon--search"></i></a></li>
+
+                                                <li><a class="product-wishlist" data-product_id="196" href="#"
+                                                       data-tooltip="Add to wishlist"><i class="ps-icon--heart"></i></a>
+                                                </li>
+
+                                                <li><a class="product-compare" data-product_id="196" href="#"
+                                                       data-tooltip="Compare"><i class="ps-icon--reload"></i></a></li>
+                                                <li>
+                                                    <a rel="nofollow" href="/?add-to-cart=196"
+                                                       data-quantity="1" data-product_id="196"
+                                                       data-product_sku="HGEGX15"
+                                                       class="product-item-cart button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                       data-tooltip="Add to cart"><i class="ps-icon--shopping-cart"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ps-product__content">
+                                            <a class="ps-product__title" href="/products/single-page">
+                                                Red sugar flower </a>
+                                            <div class="ps-product__category">
+                                                <a href="/shop" rel="tag">Albums</a><a
+                                                    href="/shop" rel="tag">Music</a></div>
+                                            <select class="ps-rating rating-0">
+                                                <option value="0" selected='selected'>0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+
+                                            <p class="ps-product__price"><span class="woocs_price_code"
+                                                                               data-product-id="196"><del
+                                                    aria-hidden="true"><span class="woocommerce-Price-amount amount"><bdi><span
+                                                    class="woocommerce-Price-currencySymbol">&pound;</span>41.64</bdi></span></del> <ins><span
+                                                    class="woocommerce-Price-amount amount"><bdi><span
+                                                    class="woocommerce-Price-currencySymbol">&pound;</span>29.15</bdi></span></ins></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-195 product type-product status-publish has-post-thumbnail product_cat-albums product_cat-music first instock downloadable shipping-taxable purchasable product-type-simple">
+                                    <div class="ps-product" data-mh="abc">
+                                        <div class="ps-product__thumbnail">
+                                            <a class="ps-product__overlay"
+                                               href="/products/single-page"></a>
+                                            <img src="/images/2017/06/img-cake-19-524x566.jpg" class=""
+                                                 alt="Pumpkin Brownie Cupcakes">
+                                            <ul class="ps-product__action">
+
+                                                <li><a data-product_id="195" class="product-quickview popup-modal"
+                                                       href="#quickview-modal" data-effect="mfp-zoom-out"
+                                                       data-tooltip="View"><i class="ps-icon--search"></i></a></li>
+
+                                                <li><a class="product-wishlist" data-product_id="195" href="#"
+                                                       data-tooltip="Add to wishlist"><i class="ps-icon--heart"></i></a>
+                                                </li>
+
+                                                <li><a class="product-compare" data-product_id="195" href="#"
+                                                       data-tooltip="Compare"><i class="ps-icon--reload"></i></a></li>
+                                                <li>
+                                                    <a rel="nofollow" href="/?add-to-cart=195"
+                                                       data-quantity="1" data-product_id="195"
+                                                       data-product_sku="HGEGX16"
+                                                       class="product-item-cart button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                       data-tooltip="Add to cart"><i class="ps-icon--shopping-cart"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ps-product__content">
+                                            <a class="ps-product__title"
+                                               href="/products/single-page">
+                                                Pumpkin Brownie Cupcakes </a>
+                                            <div class="ps-product__category">
+                                                <a href="/shop" rel="tag">Albums</a><a
+                                                    href="/shop" rel="tag">Music</a></div>
+                                            <select class="ps-rating rating-0">
+                                                <option value="0" selected='selected'>0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+
+                                            <p class="ps-product__price"><span class="woocs_price_code"
+                                                                               data-product-id="195"><span
+                                                    class="woocommerce-Price-amount amount"><bdi><span
+                                                    class="woocommerce-Price-currencySymbol">&pound;</span>7.50</bdi></span></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-194 product type-product status-publish has-post-thumbnail product_cat-albums product_cat-music  instock featured downloadable shipping-taxable purchasable product-type-simple">
+                                    <div class="ps-product" data-mh="abc">
+                                        <div class="ps-product__thumbnail">
+                                            <a class="ps-product__overlay"
+                                               href="/products/single-page"></a>
+                                            <img src="/images/2017/06/img-cake-17-524x566.jpg" class=""
+                                                 alt="Pumpkin Spice Cupcakes">
+                                            <ul class="ps-product__action">
+
+                                                <li><a data-product_id="194" class="product-quickview popup-modal"
+                                                       href="#quickview-modal" data-effect="mfp-zoom-out"
+                                                       data-tooltip="View"><i class="ps-icon--search"></i></a></li>
+
+                                                <li><a class="product-wishlist" data-product_id="194" href="#"
+                                                       data-tooltip="Add to wishlist"><i class="ps-icon--heart"></i></a>
+                                                </li>
+
+                                                <li><a class="product-compare" data-product_id="194" href="#"
+                                                       data-tooltip="Compare"><i class="ps-icon--reload"></i></a></li>
+
+                                                <li>
+                                                    <a rel="nofollow" href="/?add-to-cart=194"
+                                                       data-quantity="1" data-product_id="194"
+                                                       data-product_sku="HGEGX17"
+                                                       class="product-item-cart button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                       data-tooltip="Add to cart"><i class="ps-icon--shopping-cart"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ps-product__content">
+                                            <a class="ps-product__title"
+                                               href="/products/single-page">
+                                                Pumpkin Spice Cupcakes </a>
+                                            <div class="ps-product__category">
+                                                <a href="/shop" rel="tag">Albums</a><a
+                                                    href="/shop" rel="tag">Music</a></div>
+                                            <select class="ps-rating rating-0">
+                                                <option value="0" selected='selected'>0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+
+                                            <p class="ps-product__price"><span class="woocs_price_code"
+                                                                               data-product-id="194"><span
+                                                    class="woocommerce-Price-amount amount"><bdi><span
+                                                    class="woocommerce-Price-currencySymbol">&pound;</span>7.50</bdi></span></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-193 product type-product status-publish has-post-thumbnail product_cat-posters  instock featured shipping-taxable purchasable product-type-simple">
+                                    <div class="ps-product" data-mh="abc">
+                                        <div class="ps-product__thumbnail">
+                                            <a class="ps-product__overlay" href="/products/single-page"></a>
+                                            <img src="/images/2017/06/img-cake-16-524x566.jpg" class=""
+
+                                                 alt="Oreo Spider Cupcakes">
+                                            <ul class="ps-product__action">
+
+                                                <li><a data-product_id="193" class="product-quickview popup-modal"
+                                                       href="#quickview-modal" data-effect="mfp-zoom-out"
+                                                       data-tooltip="View"><i class="ps-icon--search"></i></a></li>
+
+                                                <li><a class="product-wishlist" data-product_id="193" href="#"
+                                                       data-tooltip="Add to wishlist"><i class="ps-icon--heart"></i></a>
+                                                </li>
+
+                                                <li><a class="product-compare" data-product_id="193" href="#"
+                                                       data-tooltip="Compare"><i class="ps-icon--reload"></i></a></li>
+
+                                                <li>
+                                                    <a rel="nofollow" href="/?add-to-cart=193"
+                                                       data-quantity="1" data-product_id="193"
+                                                       data-product_sku="HGEGX18"
+                                                       class="product-item-cart button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                       data-tooltip="Add to cart"><i class="ps-icon--shopping-cart"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ps-product__content">
+                                            <a class="ps-product__title" href="/products/single-page">
+                                                Oreo Spider Cupcakes </a>
+                                            <div class="ps-product__category">
+                                                <a href="/shop" rel="tag">Posters</a></div>
+                                            <select class="ps-rating rating-0">
+                                                <option value="0" selected='selected'>0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+
+                                            <p class="ps-product__price"><span class="woocs_price_code"
+                                                                               data-product-id="193"><span
+                                                    class="woocommerce-Price-amount amount"><bdi><span
+                                                    class="woocommerce-Price-currencySymbol">&pound;</span>12.49</bdi></span></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post-188 product type-product status-publish has-post-thumbnail product_cat-posters last instock featured shipping-taxable purchasable product-type-simple">
+                                    <div class="ps-product" data-mh="abc">
+                                        <div class="ps-product__thumbnail">
+                                            <a class="ps-product__overlay"
+                                               href="/products/single-page"></a>
+                                            <img src="/images/2017/06/img-cake-15-524x566.jpg" class=""
+                                                 alt="Chocolate Raspberry Cupcakes">
+                                            <ul class="ps-product__action">
+
+                                                <li><a data-product_id="188" class="product-quickview popup-modal"
+                                                       href="#quickview-modal" data-effect="mfp-zoom-out"
+                                                       data-tooltip="View"><i class="ps-icon--search"></i></a></li>
+
+                                                <li><a class="product-wishlist" data-product_id="188" href="#"
+                                                       data-tooltip="Add to wishlist"><i class="ps-icon--heart"></i></a>
+                                                </li>
+
+                                                <li><a class="product-compare" data-product_id="188" href="#"
+                                                       data-tooltip="Compare"><i class="ps-icon--reload"></i></a></li>
+                                                <li>
+                                                    <a rel="nofollow" href="/?add-to-cart=188"
+                                                       data-quantity="1" data-product_id="188"
+                                                       data-product_sku="HGEGX19"
+                                                       class="product-item-cart button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                       data-tooltip="Add to cart"><i class="ps-icon--shopping-cart"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ps-product__content">
+                                            <a class="ps-product__title"
+                                               href="/products/single-page">
+                                                Chocolate Raspberry Cupcakes </a>
+                                            <div class="ps-product__category">
+                                                <a href="/shop" rel="tag">Posters</a></div>
+                                            <select class="ps-rating rating-0">
+                                                <option value="0" selected='selected'>0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+
+                                            <p class="ps-product__price"><span class="woocs_price_code"
+                                                                               data-product-id="188"><span
+                                                    class="woocommerce-Price-amount amount"><bdi><span
+                                                    class="woocommerce-Price-currencySymbol">&pound;</span>12.49</bdi></span></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ps-section row wpb_row vc_row-fluid">
+        <div class="wpb_column vc_column_container vc_col-sm-12">
+            <div class="vc_column-inner">
+                <div class="wpb_wrapper">
+                    <div class="ps-section ps-section--home-testimonial pb-30 bg--parallax"
+                         data-background="https://d2t7yabstfp7fz.cloudfront.net/2019/09/img-bg-1.jpg">
+                        <div class="container">
+                            <div class="owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="10000"
+                                 data-owl-gap="0" data-owl-nav="false" data-owl-dots="true" data-owl-animate-in=""
+                                 data-owl-animate-out="" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1"
+                                 data-owl-item-md="1" data-owl-item-lg="1"
+                                 data-owl-nav-left="&lt;i class=&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt;"
+                                 data-owl-nav-right="&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;">
+                                <div class="ps-testimonial text-center pt-80 pb-100">
+                                    <div class="ps-testimonial__header">
+                                        <div class="ps-testimonial__thumbnail"><img src="/images/2017/06/4.jpg" alt="">
+                                        </div>
+
+                                        <select class="ps-rating">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5" selected='selected'>5</option>
+                                        </select>
+                                        <p>Logan May - CEO &amp; Founder Invision</p>
+                                    </div>
+
+                                    <div class="ps-testimonial__content">
+                                        <p>Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread.
+                                            Fruitcake biscuit cheesecake. Cookie topping sweet muffin pudding tart bear
+                                            claw sugar plum croissant.</p>
+                                    </div>
+                                </div>
+                                <div class="ps-testimonial text-center pt-80 pb-100">
+                                    <div class="ps-testimonial__header">
+                                        <div class="ps-testimonial__thumbnail"><img src="/images/2017/06/3.jpg" alt="">
+                                        </div>
+
+                                        <select class="ps-rating">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4" selected='selected'>4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                        <p>Logan May - CEO &amp; Founder Invision</p>
+                                    </div>
+
+                                    <div class="ps-testimonial__content">
+                                        <p>Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread.
+                                            Fruitcake biscuit cheesecake. Cookie topping sweet muffin pudding tart bear
+                                            claw sugar plum croissant.</p>
+                                    </div>
+                                </div>
+                                <div class="ps-testimonial text-center pt-80 pb-100">
+                                    <div class="ps-testimonial__header">
+                                        <div class="ps-testimonial__thumbnail"><img src="/images/2017/06/2.jpg" alt="">
+                                        </div>
+
+                                        <select class="ps-rating">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4" selected='selected'>4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                        <p>Logan May - CEO &amp; Founder Invision</p>
+                                    </div>
+
+                                    <div class="ps-testimonial__content">
+                                        <p>Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread.
+                                            Fruitcake biscuit cheesecake. Cookie topping sweet muffin pudding tart bear
+                                            claw sugar plum croissant.</p>
+                                    </div>
+                                </div>
+                                <div class="ps-testimonial text-center pt-80 pb-100">
+                                    <div class="ps-testimonial__header">
+                                        <div class="ps-testimonial__thumbnail"><img src="/images/2017/06/1.jpg" alt="">
+                                        </div>
+
+                                        <select class="ps-rating">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4" selected='selected'>4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                        <p>Logan May - CEO &amp; Founder Invision</p>
+                                    </div>
+
+                                    <div class="ps-testimonial__content">
+                                        <p>Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread.
+                                            Fruitcake biscuit cheesecake. Cookie topping sweet muffin pudding tart bear
+                                            claw sugar plum croissant.</p>
+                                    </div>
+                                </div>
+                                <div class="ps-testimonial text-center pt-80 pb-100">
+                                    <div class="ps-testimonial__header">
+                                        <div class="ps-testimonial__thumbnail"><img src="/images/2017/06/5.jpg" alt="">
+                                        </div>
+                                        <select class="ps-rating">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4" selected='selected'>4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                        <p>Logan May - CEO &amp; Founder Invision</p>
+                                    </div>
+                                    <div class="ps-testimonial__content">
+                                        <p>Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread.
+                                            Fruitcake biscuit cheesecake. Cookie topping sweet muffin pudding tart bear
+                                            claw sugar plum croissant.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ps-section row wpb_row vc_row-fluid ps-section ps-section--offer pt-80 pb-40">
+        <div class="container">
+            <div class="wpb_column vc_column_container vc_col-sm-12">
+                <div class="vc_column-inner">
+                    <div class="wpb_wrapper">
+                        <div class="ps-section__header text-center mb-100">
+                            <h4 class="ps-section__top">Making People Happy</h4>
+                            <h3 class="ps-section__title ps-section__title--full">OFFER THIS WEEK</h3></div>
+                    </div>
+                </div>
+            </div>
+            <div class="wpb_column vc_column_container vc_col-sm-6">
+                <div class="vc_column-inner">
+                    <div class="wpb_wrapper">
+                        <div class="wpb_single_image wpb_content_element vc_align_left">
+
+                            <figure class="ps-offer wpb_wrapper vc_figure">
+                                <img width="1110" height="1000" src="/images/2017/06/banner-1.jpg"
+                                     class="vc_single_image-img attachment-full wp-image-232" alt="" loading="lazy"
+                                     title="banner-1"
+                                     srcset="/images/2017/06/banner-1.jpg 1110w, /images/2017/06/banner-1-600x541.jpg 600w, /images/2017/06/banner-1-300x270.jpg 300w, /images/2017/06/banner-1-768x692.jpg 768w, /images/2017/06/banner-1-1024x923.jpg 1024w, /images/2017/06/banner-1-555x500.jpg 555w"
+                                     sizes="(max-width: 1110px) 100vw, 1110px"><a href="#" target="_self"
+                                                                                  class="ps-offer__overlay vc_single_image-wrapper   vc_box_border_grey"></a>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wpb_column vc_column_container vc_col-sm-6">
+                <div class="vc_column-inner">
+                    <div class="wpb_wrapper">
+                        <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                            <div class="wpb_column vc_column_container vc_col-sm-6">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div class="wpb_single_image wpb_content_element vc_align_left">
+                                            <figure class="ps-offer wpb_wrapper vc_figure">
+                                                <img width="524" height="470" src="/images/2017/06/banner-2.jpg"
+                                                     class="vc_single_image-img attachment-full wp-image-233" alt=""
+                                                     loading="lazy" title="banner-2"
+                                                     srcset="/images/2017/06/banner-2.jpg 524w, /images/2017/06/banner-2-350x314.jpg 350w, /images/2017/06/banner-2-300x269.jpg 300w"
+                                                     sizes="(max-width: 524px) 100vw, 524px"><a href="#" target="_self"
+                                                                                                class="ps-offer__overlay vc_single_image-wrapper   vc_box_border_grey"></a>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wpb_column vc_column_container vc_col-sm-6">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div class="wpb_single_image wpb_content_element vc_align_left">
+
+                                            <figure class="ps-offer wpb_wrapper vc_figure">
+                                                <img width="524" height="470" src="/images/2017/06/banner-3.jpg"
+                                                     class="vc_single_image-img attachment-full wp-image-234" alt=""
+                                                     loading="lazy" title="banner-3"
+                                                     srcset="/images/2017/06/banner-3.jpg 524w, /images/2017/06/banner-3-350x314.jpg 350w, /images/2017/06/banner-3-300x269.jpg 300w"
+                                                     sizes="(max-width: 524px) 100vw, 524px"><a href="#" target="_self"
+                                                                                                class="ps-offer__overlay vc_single_image-wrapper   vc_box_border_grey"></a>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wpb_column vc_column_container vc_col-sm-12">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div class="wpb_single_image wpb_content_element vc_align_left">
+
+                                            <figure class="ps-offer wpb_wrapper vc_figure">
+                                                <img width="1110" height="470" src="/images/2017/06/banner-4.jpg"
+                                                     class="vc_single_image-img attachment-full wp-image-235" alt=""
+                                                     loading="lazy" title="banner-4"
+                                                     srcset="/images/2017/06/banner-4.jpg 1110w, /images/2017/06/banner-4-600x254.jpg 600w, /images/2017/06/banner-4-300x127.jpg 300w, /images/2017/06/banner-4-768x325.jpg 768w, /images/2017/06/banner-4-1024x434.jpg 1024w, /images/2017/06/banner-4-555x235.jpg 555w"
+                                                     sizes="(max-width: 1110px) 100vw, 1110px"><a href="#"
+                                                                                                  target="_self"
+                                                                                                  class="ps-offer__overlay vc_single_image-wrapper   vc_box_border_grey"></a>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ps-section row wpb_row vc_row-fluid ps-section ps-section--list-product pt-5 pb-80">
+        <div class="container">
+            <div class="wpb_column vc_column_container vc_col-sm-6">
+                <div class="vc_column-inner">
+                    <div class="wpb_wrapper">
+                        <div class="ps-section__header ">
+                            <h3 class="ps-section__title ps-section__title--left">HOT CAKE</h3></div>
+                        <div class="woocommerce ">
+                            <div class="ps-shop ps-col-tiny products">
+                                <div class="row">
+
+                                    <div class="product-shortcode product ps-product--list ">
+                                        <div class="ps-product__thumbnail">
+                                            <a class="ps-product__overlay" href="/products/single-page"></a>
+                                            <img width="300" height="300" src="/images/2013/06/img-cake-6-300x300.jpg"
+                                                 class="attachment-shop_catalog size-shop_catalog wp-image-207" alt=""
+                                                 loading="lazy"></div>
+                                        <div class="ps-product__content">
+                                            <h4 class="ps-product__title"><a href="/products/single-page">Sweet
+                                                Cakes</a></h4>
+                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
+                                                fames&hellip;</p>
+                                            <p class="ps-product__price">
+                                                <span class="woocs_price_code" data-product-id="199"><del
+                                                        aria-hidden="true"><span
+                                                        class="woocommerce-Price-amount amount"><span
+                                                        class="woocommerce-Price-currencySymbol">&pound;</span>49.14</span></del> <ins><span
+                                                        class="woocommerce-Price-amount amount"><span
+                                                        class="woocommerce-Price-currencySymbol">&pound;</span>24.15</span></ins></span>
+                                            </p>
+                                            <a data-type="compare" rel="nofollow" href="/?add-to-cart=199"
+                                               data-quantity="1" data-product_id="199" data-product_sku="HGEGX12"
+                                               class="ps-btn ps-btn--xs product-item-cart button product_type_simple add_to_cart_button ajax_add_to_cart">Add
+                                                to cart<i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="woocommerce ">
+                            <div class="ps-shop ps-col-tiny products">
+                                <div class="row">
+                                    <div class="product-shortcode product ps-product--list ">
+                                        <div class="ps-product__thumbnail">
+                                            <a class="ps-product__overlay"
+                                               href="/products/single-page"></a>
+                                            <img width="300" height="300" src="/images/2017/06/img-cake-3-300x300.jpg"
+                                                 class="attachment-shop_catalog size-shop_catalog wp-image-251" alt=""
+                                                 loading="lazy"></div>
+                                        <div class="ps-product__content">
+                                            <h4 class="ps-product__title"><a
+                                                    href="/products/single-page">Honey Lemon
+                                                Cupcakes</a></h4>
+                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
+                                                fames&hellip;</p>
+                                            <p class="ps-product__price">
+                                                <span class="woocs_price_code" data-product-id="185"><span
+                                                        class="woocommerce-Price-amount amount"><span
+                                                        class="woocommerce-Price-currencySymbol">&pound;</span>12.49</span></span>
+                                            </p>
+                                            <a data-type="compare" rel="nofollow" href="/?add-to-cart=185"
+                                               data-quantity="1" data-product_id="185" data-product_sku="HGEGX22"
+                                               class="ps-btn ps-btn--xs product-item-cart button product_type_simple add_to_cart_button ajax_add_to_cart">Add
+                                                to cart<i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="woocommerce ">
+                            <div class="ps-shop ps-col-tiny products">
+                                <div class="row">
+                                    <div class="product-shortcode product ps-product--list ">
+                                        <div class="ps-product__thumbnail">
+                                            <a class="ps-product/products/single-page__overlay"
+                                               href="/products/single-page"></a>
+                                            <img width="300" height="300" src="/images/2017/06/img-cake-7-300x300.jpg"
+                                                 class="attachment-shop_catalog size-shop_catalog wp-image-255" alt=""
+                                                 loading="lazy"></div>
+                                        <div class="ps-product__content">
+                                            <h4 class="ps-product__title"><a href="/products/single-page">Sangria
+                                                Cupcakes</a></h4>
+                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
+                                                fames&hellip;</p>
+                                            <p class="ps-product__price">
+                                                <span class="woocs_price_code" data-product-id="186"><del
+                                                        aria-hidden="true"><span
+                                                        class="woocommerce-Price-amount amount"><span
+                                                        class="woocommerce-Price-currencySymbol">&pound;</span>12.49</span></del> <ins><span
+                                                        class="woocommerce-Price-amount amount"><span
+                                                        class="woocommerce-Price-currencySymbol">&pound;</span>9.99</span></ins></span>
+                                            </p>
+                                            <a data-type="compare" rel="nofollow" href="/?add-to-cart=186"
+                                               data-quantity="1" data-product_id="186" data-product_sku="HGEGX21"
+                                               class="ps-btn ps-btn--xs product-item-cart button product_type_simple add_to_cart_button ajax_add_to_cart">Add
+                                                to cart<i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wpb_column vc_column_container vc_col-sm-6">
+                <div class="vc_column-inner">
+                    <div class="wpb_wrapper">
+                        <div class="ps-section__header ">
+                            <h3 class="ps-section__title ps-section__title--left">NEW CAKE</h3></div>
+                        <div class="woocommerce ">
+                            <div class="ps-shop ps-col-tiny products">
+                                <div class="row">
+                                    <div class="product-shortcode product ps-product--list ">
+                                        <div class="ps-product__thumbnail">
+                                            <a class="ps-product__overlay"
+                                               href="/products/single-page"></a>
+                                            <img width="300" height="300" src="/images/2017/06/img-cake-7-300x300.jpg"
+                                                 class="attachment-shop_catalog size-shop_catalog wp-image-255" alt=""
+                                                 loading="lazy"></div>
+                                        <div class="ps-product__content">
+                                            <h4 class="ps-product__title"><a href="/products/single-page">Sangria
+                                                Cupcakes</a></h4>
+                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
+                                                fames&hellip;</p>
+                                            <p class="ps-product__price">
+                                                <span class="woocs_price_code" data-product-id="186"><del
+                                                        aria-hidden="true"><span
+                                                        class="woocommerce-Price-amount amount"><span
+                                                        class="woocommerce-Price-currencySymbol">&pound;</span>12.49</span></del> <ins><span
+                                                        class="woocommerce-Price-amount amount"><span
+                                                        class="woocommerce-Price-currencySymbol">&pound;</span>9.99</span></ins></span>
+                                            </p>
+                                            <a data-type="compare" rel="nofollow" href="/?add-to-cart=186"
+                                               data-quantity="1" data-product_id="186" data-product_sku="HGEGX21"
+                                               class="ps-btn ps-btn--xs product-item-cart button product_type_simple add_to_cart_button ajax_add_to_cart">Add
+                                                to cart<i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="woocommerce ">
+                            <div class="ps-shop ps-col-tiny products">
+                                <div class="row">
+                                    <div class="product-shortcode product ps-product--list ">
+                                        <div class="ps-product__thumbnail">
+                                            <a class="ps-product__overlay"
+                                               href="/products/single-page"></a>
+                                            <img width="300" height="300" src="/images/2017/06/img-cake-10-300x300.jpg"
+                                                 class="attachment-shop_catalog size-shop_catalog wp-image-258" alt=""
+                                                 loading="lazy"></div>
+                                        <div class="ps-product__content">
+                                            <h4 class="ps-product__title"><a
+                                                    href="/products/single-page">Blueberry
+                                                Buttercream</a></h4>
+                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
+                                                fames&hellip;</p>
+                                            <p class="ps-product__price">
+                                                <span class="woocs_price_code" data-product-id="184"><span
+                                                        class="woocommerce-Price-amount amount"><span
+                                                        class="woocommerce-Price-currencySymbol">&pound;</span>29.15</span></span>
+                                            </p>
+                                            <a data-type="compare" rel="nofollow" href="/?add-to-cart=184"
+                                               data-quantity="1" data-product_id="184" data-product_sku="HGEGX23"
+                                               class="ps-btn ps-btn--xs product-item-cart button product_type_simple add_to_cart_button ajax_add_to_cart">Add
+                                                to cart<i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="woocommerce ">
+                            <div class="ps-shop ps-col-tiny products">
+                                <div class="row">
+
+                                    <div class="product-shortcode product ps-product--list ">
+                                        <div class="ps-product__thumbnail">
+                                            <a class="ps-product__overlay" href="/products/single-page"></a>
+                                            <img width="300" height="300" src="/images/2017/06/img-cake-11-300x300.jpg"
+                                                 class="attachment-shop_catalog size-shop_catalog wp-image-259" alt=""
+                                                 loading="lazy"></div>
+                                        <div class="ps-product__content">
+                                            <h4 class="ps-product__title"><a href="/products/single-page">Cherry
+                                                Coke</a></h4>
+                                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada
+                                                fames&hellip;</p>
+                                            <p class="ps-product__price">
+                                                <span class="woocs_price_code" data-product-id="182"><span
+                                                        class="woocommerce-Price-amount amount"><span
+                                                        class="woocommerce-Price-currencySymbol">&pound;</span>29.15</span></span>
+                                            </p>
+                                            <a data-type="compare" rel="nofollow" href="/?add-to-cart=182"
+                                               data-quantity="1" data-product_id="182" data-product_sku="HGEGX25"
+                                               class="ps-btn ps-btn--xs product-item-cart button product_type_simple add_to_cart_button ajax_add_to_cart">Add
+                                                to cart<i class="fa fa-angle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ps-section row wpb_row vc_row-fluid ps-section ps-section--team ps-section--pattern pt-80 pb-80">
+        <div class="container">
+            <div class="wpb_column vc_column_container vc_col-sm-4">
+                <div class="vc_column-inner">
+                    <div class="wpb_wrapper">
+                        <div class="wpb_text_column wpb_content_element ">
+                            <div class="wpb_wrapper">
+                                <div class="ps-section__header">
+                                    <h3 class="ps-section__title ps-section__title--left">OUR BAKER</h3>
+                                    <p>We all have those moments in our lives when we feel as if everything needs to be
+                                        exactly rigt.</p>
+                                    <p>Dessert tiramisu tart donut macaroon. Gummi bears lollipop marzipan. Caramels
+                                        gummi bears icing jelly beans cheesecake brownie topping candy sugaplum.</p>
+                                    <ul class="ps-list ps-list--dot">
+                                        <li>Caramels gummi bears</li>
+                                        <li>Caramels gummi bears</li>
+                                        <li>Caramels gummi bears</li>
+                                    </ul>
+                                    <p><a class="ps-btn ps-section__morelink" href="#">Read more<i
+                                            class="fa fa-angle-right"></i></a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wpb_column vc_column_container vc_col-sm-8">
+                <div class="vc_column-inner">
+                    <div class="wpb_wrapper">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                            <article class="ps-people ps-people--2">
+                                <div class="ps-people__thumbnail">
+                                    <a class="ps-people__overlay" href="#"></a>
+                                    <img src="/images/2017/06/team-1-360x280.jpg" class="" alt="home page"></div>
+
+                                <div class="ps-people__content">
+                                    <h4>CHRISTIAN GREGORY</h4>
+
+                                    <span class="ps-people__position">CEO - Founder</span>
+
+                                    <p>Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+
+                                    <ul class="ps-people__social">
+                                        <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+
+                                        <li><a href="#" target="_blank"><i class="fa fa-google"></i></a></li>
+
+                                        <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+
+                                    </ul>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                            <article class="ps-people ps-people--2">
+                                <div class="ps-people__thumbnail">
+                                    <a class="ps-people__overlay" href="#"></a>
+                                    <img src="/images/2017/06/team-2-360x280.jpg" class="" alt="home page"></div>
+
+                                <div class="ps-people__content">
+                                    <h4>CHRISTIAN GREGORY</h4>
+
+                                    <span class="ps-people__position">CEO - Founder</span>
+
+                                    <p>Jelly topping halvah caramels sweet cake gummi bears toffee.</p>
+
+                                    <ul class="ps-people__social">
+                                        <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+
+                                        <li><a href="#" target="_blank"><i class="fa fa-google"></i></a></li>
+
+                                        <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+
+                                    </ul>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:insert="web/fragments/fragment.html::ourStoryImport"></div>
+<div th:insert="web/fragments/fragment.html::contactUsImport"></div>
+<div th:insert="web/fragments/fragment.html::aboutUs"></div>
+<div th:insert="web/fragments/fragment.html::footerImport"></div>
+<div th:insert="web/fragments/fragment.html::underFooterImport"></div>
+
+<script type="text/javascript">
+    window.RS_MODULES = window.RS_MODULES || {};
+    window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+    window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+    window.RS_MODULES.defered = true;
+    window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+    window.RS_MODULES.type = 'compiled';
+</script>
+<script type="text/html" id="wpb-modifications"></script>
+<script type="text/javascript">
+    (function () {
+        var c = document.body.className;
+        c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+        document.body.className = c;
+    })();
+</script>
+<script type="text/javascript">
+    if (typeof revslider_showDoubleJqueryError === "undefined") {
+        function revslider_showDoubleJqueryError(sliderID) {
+            console.log("You have some jquery.js library include that comes after the Slider Revolution files js inclusion.");
+            console.log("To fix this, you can:");
+            console.log("1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on");
+            console.log("2. Find the double jQuery.js inclusion and remove it");
+            return "Double Included jQuery Library";
+        }
+    }
+</script>
+<link rel="preload" as="font" id="rs-icon-set-fa-icon-woff" type="font/woff2" crossorigin="anonymous"
+      href="/assets/wp-content2/plugins/revslider/public/assets/fonts/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0"
+      media="all">
+<link rel="stylesheet" property="stylesheet" id="rs-icon-set-fa-icon-css"
+      href="/assets/wp-content2/plugins/revslider/public/assets/fonts/font-awesome/css/font-awesome.css" type="text/css"
+      media="all">
+<link rel='stylesheet' id='woocommerce-currency-switcher-css'
+      href='/assets/wp-content/plugins/woocommerce-currency-switcher/css/front.css' type='text/css' media='all'>
+<link rel='stylesheet' id='rs-plugin-settings-css'
+      href='/assets/wp-content2/plugins/revslider/public/assets/css/rs6.css'
+      type='text/css' media='all'>
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+    #rev_slider_14_1_wrapper .hermes.tp-bullets {
+    }
+
+    #rev_slider_14_1_wrapper .hermes .tp-bullet {
+        overflow: hidden;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        background-color: rgba(0, 0, 0, 0);
+        box-shadow: inset 0 0 0 2px #ffffff;
+        -webkit-transition: background 0.3s ease;
+        transition: background 0.3s ease;
+        position: absolute
+    }
+
+    #rev_slider_14_1_wrapper .hermes .tp-bullet.rs-touchhover {
+        background-color: rgba(0, 0, 0, 0.21)
+    }
+
+    #rev_slider_14_1_wrapper .hermes .tp-bullet:after {
+        content: ' ';
+        position: absolute;
+        bottom: 0;
+        height: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 0 1px #ffffff;
+        -webkit-transition: height 0.3s ease;
+        transition: height 0.3s ease
+    }
+
+    #rev_slider_14_1_wrapper .hermes .tp-bullet.selected:after {
+        height: 100%
+    }
+</style>
+<script type='text/javascript' src='/assets/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js'
+        id='js-cookie-js'></script>
+<script type='text/javascript' id='woocommerce-js-extra'>
+    /* <![CDATA[ */
+    var woocommerce_params = {
+        "ajax_url": "\/wordpress\/bakery\/wp-admin\/admin-ajax.php",
+        "wc_ajax_url": "\/wordpress\/bakery\/?wc-ajax=%%endpoint%%"
+    };
+    /* ]]> */
+</script>
+<script type='text/javascript' src='/assets/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js'
+        id='woocommerce-js'></script>
+<script type='text/javascript' id='wc-cart-fragments-js-extra'>
+    /* <![CDATA[ */
+    var wc_cart_fragments_params = {
+        "ajax_url": "\/wordpress\/bakery\/wp-admin\/admin-ajax.php",
+        "wc_ajax_url": "\/wordpress\/bakery\/?wc-ajax=%%endpoint%%",
+        "cart_hash_key": "wc_cart_hash_affd112d0875df899f894fefd5b5a652",
+        "fragment_name": "wc_fragments_affd112d0875df899f894fefd5b5a652",
+        "request_timeout": "5000"
+    };
+    /* ]]> */
+</script>
+<script type='text/javascript'
+        src='/assets/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js'
+        id='wc-cart-fragments-js'></script>
+<script type='text/javascript' id='bootstrap-js-extra'>
+    /* <![CDATA[ */
+    var noubakery_theme_params = {
+        "home_url": "http:\/\/warethemes.com\/wordpress\/bakery\/",
+        "ajax_url": "http:\/\/warethemes.com\/wordpress\/bakery\/wp-admin\/admin-ajax.php",
+        "ajax_nonce": "72ab4fdf92",
+        "menu_desktop_fixed": "yes",
+        "lazy_loading": "no",
+        "warning_text": "Warning!",
+        "success_text": "Success!",
+        "error_text": "Error!",
+        "email_empty_text": "Email is required. Please fill email field.",
+        "email_invalid_text": "Email is invalid.",
+        "notify_delay": "3000",
+        "map_marker": "http:\/\/warethemes.com\/wordpress\/bakery\/wp-content\/themes\/bakery\/assets\/images\/marker.png",
+        "map_api": "AIzaSyBQDEK_bp8E3TJz1Sg1VMqF7jn8J3Z7Haw",
+        "name_empty_text": "First name is required. Please fill this field.",
+        "required_empty_text": "Please fill all required fields.",
+        "content_empty_text": "Message is required. Please fill this field.",
+        "send_email_success_text": "Email has send successfully.",
+        "quick_order_success_text": "Thanks you, your order has been successfully.",
+        "quick_order_fail_text": "Order has failed, please contact administrator.",
+        "send_email_fail_text": "Email has send fail.",
+        "btn_contact_text": "Submit",
+        "btn_quick_order_text": "Order Bakery Now",
+        "btn_send_message_text": "Send Message",
+        "added_to_cart_text": "Product has been added to your cart.",
+        "compare_page_url": "http:\/\/warethemes.com\/wordpress\/bakery\/compare\/",
+        "wishlist_page_url": "http:\/\/warethemes.com\/wordpress\/bakery\/wishlist\/",
+        "date_time_format": "MM\/DD\/YYYY hh:mm",
+        "subscribe_popup_delay": "7000",
+        "single_enable_lightbox": "1",
+        "not_found_posts": "No posts were found matching your keyworks."
+    };
+    /* ]]> */
+</script>
+<script type='text/javascript'
+        src='/assets/wp-content/plugins/bakery-helpers/assets/plugins/bootstrap/dist/js/bootstrap.min.js'
+        id='bootstrap-js'></script>
+<script type='text/javascript'
+        src='/assets/wp-content/plugins/bakery-helpers/assets/plugins/owl-carousel/owl.carousel.min.js'
+        id='owl-carousel-js'></script>
+<script type='text/javascript' src='/assets/wp-content/themes/noucake/assets/js/bootstrap-notify.min.js'
+        id='bootstrap-notify-js'></script>
+<script type='text/javascript' src='/assets/wp-content/plugins/bakery-helpers/assets/plugins/overflow-text.js'
+        id='overflow-text-js'></script>
+<script type='text/javascript'
+        src='/assets/wp-content/plugins/bakery-helpers/assets/plugins/lightGallery-master/dist/js/lightgallery-all.min.js'
+        id='lightGallery-js'></script>
+<script type='text/javascript' src='/assets/wp-includes/js/imagesloaded.min.js' id='imagesloaded-js'></script>
+<script type='text/javascript' src='/assets/wp-includes/js/masonry.min.js' id='masonry-js'></script>
+<script type='text/javascript'
+        src='/assets/wp-content/plugins/bakery-helpers/assets/plugins/jquery-bar-rating/dist/jquery.barrating.min.js'
+        id='jquery-bar-rating-js'></script>
+<script type='text/javascript'
+        src='/assets/wp-content/plugins/bakery-helpers/assets/plugins/jquery-nice-select/js/jquery.nice-select.min.js'
+        id='jquery-nice-select-js'></script>
+<script type='text/javascript'
+        src='/assets/wp-content/plugins/bakery-helpers/assets/plugins/Magnific-Popup/dist/jquery.magnific-popup.min.js'
+        id='Magnific-Popup-js'></script>
+<script type='text/javascript'
+        src='/assets/wp-content/plugins/bakery-helpers/assets/plugins/noubakery-custom/noubakery-custom-ui.js'
+        id='noubakery-custom-UI-js'></script>
+<script type='text/javascript' src='/assets/wp-includes/js/dist/vendor/moment.min.js' id='moment-js'></script>
+<script type='text/javascript' id='moment-js-after'>
+    moment.updateLocale('en_US', {
+        "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        "monthsShort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        "weekdays": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "weekdaysShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        "week": {"dow": 1},
+        "longDateFormat": {"LT": "g:i a", "LTS": null, "L": null, "LL": "F d, Y", "LLL": "F j, Y g:i a", "LLLL": null}
+    });
+</script>
+<script type='text/javascript'
+        src='/assets/wp-content/plugins/bakery-helpers/assets/plugins/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js'
+        id='bootstrap-datetimepicker-js'></script>
+<script type='text/javascript'
+        src='/assets/wp-content/plugins/bakery-helpers/assets/plugins/slick/slick/slick.min.js'
+        id='slick-js'></script>
+<script type='text/javascript'
+        src='/assets/wp-content/plugins/bakery-helpers/assets/plugins/lazy-loading-google-maps/jquery.lazy-load-google-maps.js'
+        id='noubakery-maps-js'></script>
+<script type='text/javascript'
+        src='/assets/wp-content/plugins/bakery-helpers/assets/plugins/matchHeight/jquery.matchHeight.js'
+        id='matchHeight-js'></script>
+<script type='text/javascript' src='/assets/wp-includes/js/underscore.min.js' id='underscore-js'></script>
+<script type='text/javascript' id='wp-util-js-extra'>
+    /* <![CDATA[ */
+    var _wpUtilSettings = {"ajax": {"url": "\/wordpress\/bakery\/wp-admin\/admin-ajax.php"}};
+    /* ]]> */
+</script>
+<script type='text/javascript' src='/assets/wp-includes/js/wp-util.min.js' id='wp-util-js'></script>
+<script type='text/javascript' id='wc-add-to-cart-variation-js-extra'>
+    /* <![CDATA[ */
+    var wc_add_to_cart_variation_params = {
+        "wc_ajax_url": "\/wordpress\/bakery\/?wc-ajax=%%endpoint%%",
+        "i18n_no_matching_variations_text": "Sorry, no products matched your selection. Please choose a different combination.",
+        "i18n_make_a_selection_text": "Please select some product options before adding this product to your cart.",
+        "i18n_unavailable_text": "Sorry, this product is unavailable. Please choose a different combination."
+    };
+    /* ]]> */
+</script>
+<script type='text/javascript'
+        src='/assets/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.min.js'
+        id='wc-add-to-cart-variation-js'></script>
+<script type='text/javascript' src='/assets/wp-content/themes/noucake/assets/js/main.js' id='main-js'></script>
+<script type='text/javascript' src='/assets/wp-includes/js/jquery/ui/core.min.js' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='/assets/wp-includes/js/jquery/ui/mouse.min.js'
+        id='jquery-ui-mouse-js'></script>
+<script type='text/javascript' src='/assets/wp-includes/js/jquery/ui/slider.min.js'
+        id='jquery-ui-slider-js'></script>
+<script type='text/javascript'
+        src='/assets/wp-content/plugins/woocommerce/assets/js/jquery-ui-touch-punch/jquery-ui-touch-punch.min.js'
+        id='wc-jquery-ui-touchpunch-js'></script>
+<script type='text/javascript' src='/assets/wp-content/plugins/woocommerce-currency-switcher/js/price-slider_33.js'
+        id='wc-price-slider_33-js'></script>
+<script type='text/javascript'
+        src='/assets/wp-content/plugins/woocommerce-currency-switcher/js/jquery.ddslick.min.js'
+        id='jquery.ddslick.min-js'></script>
+<script type='text/javascript' src='/assets/wp-content/plugins/woocommerce-currency-switcher/js/front.js'
+        id='woocommerce-currency-switcher-js'></script>
+<script type='text/javascript' src='/assets/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js'
+        id='wpb_composer_front_js-js'></script>
+<script type="text/javascript" id="rs-initialisation-scripts">
+    var tpj = jQuery;
+
+    var revapi14;
+
+    if (window.RS_MODULES === undefined) window.RS_MODULES = {};
+    if (RS_MODULES.modules === undefined) RS_MODULES.modules = {};
+    RS_MODULES.modules["revslider141"] = {
+        once: RS_MODULES.modules["revslider141"] !== undefined ? RS_MODULES.modules["revslider141"].once : undefined,
+        init: function () {
+            window.revapi14 = window.revapi14 === undefined || window.revapi14 === null || window.revapi14.length === 0 ? document.getElementById("rev_slider_14_1") : window.revapi14;
+            if (window.revapi14 === null || window.revapi14 === undefined || window.revapi14.length == 0) {
+                window.revapi14initTry = window.revapi14initTry === undefined ? 0 : window.revapi14initTry + 1;
+                if (window.revapi14initTry < 20) requestAnimationFrame(function () {
+                    RS_MODULES.modules["revslider141"].init()
+                });
+                return;
+            }
+            window.revapi14 = jQuery(window.revapi14);
+            if (window.revapi14.revolution == undefined) {
+                revslider_showDoubleJqueryError("rev_slider_14_1");
+                return;
+            }
+            revapi14.revolutionInit({
+                revapi: "revapi14",
+                sliderLayout: "fullwidth",
+                duration: 5000,
+                visibilityLevels: "1240,1024,778,480",
+                gridwidth: "1240,1024,778,480",
+                gridheight: "650,768,960,720",
+                lazyType: "smart",
+                spinner: "spinner0",
+                perspectiveType: "local",
+                editorheight: "650,768,960,720",
+                responsiveLevels: "1240,1024,778,480",
+                progressBar: {disableProgressBar: true},
+                navigation: {
+                    mouseScrollNavigation: false,
+                    onHoverStop: false,
+                    touch: {
+                        touchenabled: true,
+                        touchOnDesktop: true
+                    },
+                    bullets: {
+                        enable: true,
+                        tmp: "",
+                        style: "hermes",
+                        v_offset: 100,
+                        space: 10
+                    }
+                },
+                parallax: {
+                    levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 55],
+                    type: "scroll",
+                    speed: 1200,
+                    disable_onmobile: true
+                },
+                viewPort: {
+                    global: true,
+                    globalDist: "-200px",
+                    enable: false,
+                    visible_area: "20%"
+                },
+                fallbacks: {
+                    allowHTML5AutoPlayOnAndroid: true
+                },
+            });
+
+        }
+    } // End of RevInitScript
+
+    if (window.RS_MODULES.checkMinimal !== undefined) {
+        window.RS_MODULES.checkMinimal();
+    }
+    ;
+</script>
+</body>
+</html>
+<!-- Cache Enabler by KeyCDN @ Fri, 23 Sep 2022 17:57:51 GMT (http-/.gz) -->

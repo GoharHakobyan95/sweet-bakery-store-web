@@ -1,0 +1,732 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>::eBakery:: Dashboard</title>
+    <link rel="icon" href="/admin/favicon.ico" type="image/x-icon"> <!-- Favicon-->
+
+    <!-- plugin css file  -->
+    <link rel="stylesheet" href="/admin/dist/assets/plugin/datatables/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="/admin/dist/assets/plugin/datatables/dataTables.bootstrap5.min.css">
+    <!-- project css file  -->
+    <link rel="stylesheet" href="/ebazar.style.min.css">
+</head>
+<style>
+    .size-block, .price-range-block, .rating-block, .color-block, .categories {
+        padding: 15px;
+    }
+
+    .size-block .filter-title .title, .price-range-block .filter-title .title, .rating-block .filter-title .title, .color-block .filter-title .title, .categories .filter-title .title {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 40px;
+        display: block;
+        position: relative;
+    }
+
+    .size-block .filter-title .title::before, .price-range-block .filter-title .title::before, .rating-block .filter-title .title::before, .color-block .filter-title .title::before, .categories .filter-title .title::before {
+        position: absolute;
+        content: "\ea99";
+        font-family: 'IcoFont' !important;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        font-size: 24px;
+        color: var(--primary-color);
+    }
+
+    .size-block .filter-title .title.collapsed::before, .price-range-block .filter-title .title.collapsed::before, .rating-block .filter-title .title.collapsed::before, .color-block .filter-title .title.collapsed::before, .categories .filter-title .title.collapsed::before {
+        content: "\eaa1";
+    }
+
+    .size-block ul, .price-range-block ul, .rating-block ul, .color-block ul, .categories ul {
+        list-style: none;
+        padding-left: 0px;
+    }
+
+    .reset-block {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .reset-block .filter-title .title {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 40px;
+        display: block;
+        position: relative;
+        margin-bottom: 0px;
+    }
+
+    .size-block .filter-size {
+        padding-top: 8px;
+    }
+
+    .size-block .filter-size ul li {
+        display: inline-block;
+        text-align: center;
+        width: 35px;
+        height: 35px;
+        line-height: 33px;
+        border: 1px solid var(--border-color);
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 700;
+        border-radius: 4px;
+        margin-top: 8px;
+        transition: all 0.3s linear;
+        cursor: pointer;
+    }
+
+    .size-block .filter-size ul li + li {
+        margin-left: 2px;
+    }
+
+    .size-block .filter-size ul li:hover {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: #fff;
+    }
+
+    .size-block .filter-size ul li.active {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: #fff;
+    }
+
+    .price-range-block .price-range .price-amount {
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .price-range-block .price-range .price-amount .amount-input {
+        width: 50%;
+    }
+
+    .price-range-block .price-range .price-amount .amount-input label {
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 0;
+        display: block;
+    }
+
+    .price-range-block .price-range .price-amount .amount-input input {
+        display: inline-block;
+        width: 95%;
+        height: 40px;
+        border: 1px solid var(--border-color);
+        padding: 0 16px;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        margin-top: 8px;
+    }
+
+    .price-range-block .price-range .price-amount .amount-input:last-child label {
+        padding-left: 0;
+    }
+
+    .price-range-block .price-range .slider-range {
+        height: 4px;
+        width: 100%;
+        border: 0;
+        border-radius: 10px;
+        background-color: var(--border-color);
+        margin-top: 38px;
+        margin-bottom: 13px;
+    }
+
+    .price-range-block .price-range .slider-range .ui-slider-range {
+        background-color: var(--primary-color);
+    }
+
+    .price-range-block .price-range .slider-range .ui-slider-handle {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        top: -13px;
+        cursor: pointer;
+        border: 0;
+    }
+
+    .price-range-block .price-range .slider-range .ui-slider-handle:focus {
+        outline: 0;
+    }
+
+    .price-range-block .noUi-base {
+        width: 97%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .price-range-block .noUi-connect {
+        background-color: var(--primary-color);
+    }
+
+    .price-range-block .noUi-handle {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        top: -9px;
+        cursor: pointer;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .price-range-block .noUi-handle:after {
+        display: none;
+    }
+
+    .price-range-block .noUi-handle:before {
+        display: none;
+    }
+
+    .rating-block .filter-rating {
+        padding-top: 8px;
+    }
+
+    .rating-block .filter-rating .rating-check {
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        margin-top: 8px;
+    }
+
+    .rating-block .filter-rating .rating-check input[type="checkbox"] {
+        display: none;
+    }
+
+    .rating-block .filter-rating .rating-check input[type="checkbox"] + label span {
+        width: 17px;
+        height: 17px;
+        border: 2px solid var(--border-color);
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        margin: 0 5px -3px 0;
+        transition: all 0.4s linear;
+    }
+
+    .rating-block .filter-rating .rating-check input[type="checkbox"] + label span::before {
+        position: absolute;
+        content: '\eed8';
+        font-family: 'IcoFont' !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        top: 1px;
+        left: -1px;
+        width: 100%;
+        height: 100%;
+        transition: all 0.4s linear;
+        line-height: 0.8;
+        font-size: 16px;
+        color: #fff;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .rating-block .filter-rating .rating-check input[type="checkbox"]:checked + label span {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+
+    .rating-block .filter-rating .rating-check input[type="checkbox"]:checked + label span::before {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .rating-block .filter-rating .rating-check p {
+        padding-left: 5px;
+    }
+
+    .rating-block .filter-rating .rating-check p i {
+        color: #FFBE27;
+        font-size: 20px;
+    }
+
+    .color-block .filter-color {
+        padding-top: 8px;
+    }
+
+    .color-block .filter-color .color-check {
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+    }
+
+    .color-block .filter-color .color-check p {
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+    }
+
+    .color-block .filter-color .color-check p span {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        margin-right: 11px;
+    }
+
+    .color-block .filter-color .color-check p strong {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .color-block .filter-color .color-check input[type="checkbox"] {
+        display: none;
+    }
+
+    .color-block .filter-color .color-check input[type="checkbox"] + label span {
+        width: 17px;
+        height: 17px;
+        border: 2px solid var(--border-color);
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        margin: 0 5px -3px 0;
+        transition: all 0.4s linear;
+    }
+
+    .color-block .filter-color .color-check input[type="checkbox"] + label span::before {
+        position: absolute;
+        content: '\eed8';
+        font-family: 'IcoFont' !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        top: 1px;
+        left: -1px;
+        width: 100%;
+        height: 100%;
+        transition: all 0.4s linear;
+        line-height: 0.8;
+        font-size: 16px;
+        color: #fff;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .color-block .filter-color .color-check input[type="checkbox"]:checked + label span {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+
+    .color-block .filter-color .color-check input[type="checkbox"]:checked + label span::before {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .categories .filter-search {
+        margin-top: 16px;
+        position: relative;
+    }
+
+    .categories .filter-search input {
+        width: 100%;
+        height: 40px;
+        border: 1px solid var(--border-color);
+        padding: 0 16px;
+        border-radius: 4px;
+    }
+
+    .categories .filter-search button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        background: none;
+        color: var(--primary-color);
+    }
+
+    .categories .filter-category .category-list {
+        padding-top: 8px;
+    }
+
+    .categories .filter-category .category-list li {
+        margin-top: 8px;
+    }
+
+    .categories .filter-category .category-list li a {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        position: relative;
+        display: block;
+    }
+
+    .categories .filter-category .category-list li a::before {
+        position: absolute;
+        content: "\ea99";
+        font-family: 'IcoFont' !important;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        font-size: 24px;
+        color: var(--primary-color);
+    }
+
+    .categories .filter-category .category-list li .sub-category {
+        padding: 8px 0;
+        padding-left: 34px;
+    }
+
+    .categories .filter-category .category-list li .sub-category li a {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        position: relative;
+        display: block;
+    }
+
+    .categories .filter-category .category-list li .sub-category li a::before {
+        display: none;
+    }
+
+</style>
+
+<body>
+<div id="ebazar-layout" class="theme-blue">
+
+    <!-- sidebar -->
+    <div th:insert="/admin/fragments/fragment::slidebar"></div>
+    <!-- main body area -->
+    <div class="main px-lg-4 px-md-4">
+        <div th:insert="/admin/fragments/fragment::headerImport"></div>
+
+        <!-- Body: Body -->
+        <div class="body d-flex py-3">
+            <div class="container-xxl">
+                <div class="row align-items-center">
+                    <div class="border-0 mb-4">
+                        <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
+                            <h3 class="fw-bold mb-0">Products</h3>
+                            <div class="row align-items-center">
+                                <div class="border-0 mb-4">
+                                    <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
+
+                                        <a href="/admin/products-add"
+                                           class="btn btn-primary py-2 px-5 btn-set-task w-sm-100"><i
+                                                class="icofont-plus-circle me-2 fs-6"></i> Add Products</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Row end  -->
+                <div class="row g-3 mb-3">
+                    <div class="col-md-12 col-lg-4 col-xl-4 col-xxl-3">
+                        <div class="sticky-lg-top">
+                            <div class="card mb-3">
+                                <div class="reset-block">
+                                    <div class="filter-title">
+                                        <h4 class="title">Filter</h4>
+                                    </div>
+                                    <div class="filter-btn">
+                                        <a class="btn btn-primary" href="#">Reset</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mb-3">
+                                <div class="categories">
+                                    <div class="filter-title">
+                                        <a class="title" data-bs-toggle="collapse" href="#category" role="button"
+                                           aria-expanded="true">Categories</a>
+                                    </div>
+                                    <div class="collapse show" id="category">
+                                        <div class="filter-search">
+                                            <form>
+                                                <input id="searchInput" type="text" placeholder="Search"
+                                                       class="form-control"
+                                                >
+                                                <button><i class="lni lni-search-alt"></i></button>
+                                            </form>
+                                        </div>
+
+
+                                        <div id="categoryResult">
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card mb-3">
+                                <div class="price-range-block">
+                                    <div class="filter-title">
+                                        <a class="title" data-bs-toggle="collapse" href="#pricingTwo" role="button"
+                                           aria-expanded="false">Pricing Range</a>
+                                    </div>
+                                    <div class="collapse show" id="pricingTwo">
+                                        <div class="price-range">
+                                            <div class="price-amount flex-wrap">
+                                                <div class="amount-input mt-1">
+                                                    <label class="fw-bold">Minimum Price</label>
+                                                    <input type="text" id="minAmount2" class="form-control">
+                                                </div>
+                                                <div class="amount-input mt-1">
+                                                    <label class="fw-bold">Maximum Price</label>
+                                                    <input type="text" id="maxAmount2" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div id="slider-range2"
+                                                 class="slider-range noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr">
+                                                <div class="noUi-base">
+                                                    <div class="noUi-connects">
+                                                        <div class="noUi-connect"
+                                                             style="transform: translate(7.45%) scale(0.12500000000000003, 1);"></div>
+                                                    </div>
+                                                    <div class="noUi-origin"
+                                                         style="transform: translate(-925.5%, 0px); z-index: 5;">
+                                                        <div class="noUi-handle noUi-handle-lower" data-handle="0"
+                                                             tabindex="0" role="slider" aria-orientation="horizontal"
+                                                             aria-valuemin="0.0" aria-valuemax="399.0"
+                                                             aria-valuenow="149.0" aria-valuetext="149.00">
+                                                            <div class="noUi-touch-area"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="noUi-origin"
+                                                         style="transform: translate(-800.5%, 0px); z-index: 6;">
+                                                        <div class="noUi-handle noUi-handle-upper" data-handle="1"
+                                                             tabindex="0" role="slider" aria-orientation="horizontal"
+                                                             aria-valuemin="149.0" aria-valuemax="2000.0"
+                                                             aria-valuenow="399.0" aria-valuetext="399.00">
+                                                            <div class="noUi-touch-area"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card">
+                                <div class="rating-block">
+                                    <div class="filter-title">
+                                        <a class="title" data-bs-toggle="collapse" href="#rating" role="button"
+                                           aria-expanded="false">Select Rating</a>
+                                    </div>
+                                    <div class="collapse show" id="rating">
+                                        <div class="filter-rating">
+                                            <ul>
+                                                <li>
+                                                    <div class="rating-check">
+                                                        <input type="checkbox" id="rating-5">
+                                                        <label for="rating-5"><span></span>
+
+                                                        </label>
+                                                        <p>
+                                                            <i class="icofont-star"></i>
+                                                            <i class="icofont-star"></i>
+                                                            <i class="icofont-star"></i>
+                                                            <i class="icofont-star"></i>
+                                                            <i class="icofont-star"></i>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="rating-check">
+                                                        <input type="checkbox" id="rating-4">
+                                                        <label for="rating-4"><span></span></label>
+                                                        <p>
+                                                            <i class="icofont-star"></i>
+                                                            <i class="icofont-star"></i>
+                                                            <i class="icofont-star"></i>
+                                                            <i class="icofont-star"></i>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="rating-check">
+                                                        <input type="checkbox" id="rating-3">
+                                                        <label for="rating-3"><span></span></label>
+                                                        <p>
+                                                            <i class="icofont-star"></i>
+                                                            <i class="icofont-star"></i>
+                                                            <i class="icofont-star"></i>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="rating-check">
+                                                        <input type="checkbox" id="rating-2">
+                                                        <label for="rating-2"><span></span></label>
+                                                        <p>
+                                                            <i class="icofont-star"></i>
+                                                            <i class="icofont-star"></i>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="rating-check">
+                                                        <input type="checkbox" id="rating-1">
+                                                        <label for="rating-1"><span></span></label>
+                                                        <p>
+                                                            <i class="icofont-star"></i>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-8 col-xl-8 col-xxl-9">
+                        <div class="card mb-3 bg-transparent p-2">
+                            <div role="alert" class="alert alert-danger" th:if="${deleteErrorMessage !=null}"
+                                 th:text="${deleteErrorMessage}">
+                            </div>
+                            <div class="card border-0 mb-1">
+
+                                <div class="card-body d-flex align-items-center flex-column flex-md-row"
+                                     th:each="product: ${products}">
+                                    <a href="#">
+                                        <img th:if="${product.productPic != null}"
+                                             th:src="@{/admin/products/getImage(fileName=${product.productPic})}"
+                                             height="100" width="100">
+                                        <img th:if="${product.productPic == null}"
+                                             src="/images/product-default.jpg" height=100 width=100>
+                                    </a>
+                                    <div class="ms-md-4 m-0 mt-4 mt-md-0 text-md-start text-center w-100">
+                                        <a href="#">
+                                            <h6 class="mb-3 fw-bold" th:text="${product.name}">Product's name</h6>
+                                        </a>
+                                        <div class="d-flex flex-row flex-wrap align-items-center justify-content-center justify-content-md-start">
+                                            <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
+                                                <div class="text-muted small">Price</div>
+                                                <strong th:text="${product.price}">AMD</strong>
+                                            </div>
+                                            <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
+                                                <div class="text-muted small">Category</div>
+                                                <strong th:text="${product.category.name}">Bank Offer</strong>
+                                            </div>
+                                            <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
+                                                <div class="text-muted small">In Store</div>
+                                                <strong th:text="${product.inStore}"></strong>
+                                            </div>
+                                            <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
+                                                <div class="text-muted small">Ratings</div>
+                                                <strong><i class="icofont-star text-warning"></i>4.5 <span
+                                                        class="text-muted">(145)</span></strong>
+                                            </div>
+                                            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                                <a th:href="@{'/admin/products-edit'(id=${product.id})}"
+                                                   class="btn btn-outline-secondary"><i
+                                                        class="icofont-edit text-success"></i></a>
+                                                <a th:href="@{'/admin/products/delete/'+${product.id}}">
+                                                    <button type="button" class="btn btn-outline-secondary deleterow"><i
+                                                            class="icofont-ui-delete text-danger"></i></button>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div th:if="${products.totalPages > 0}" class="page"
+                         th:each="pageNumber : ${pageNumbers}">
+                        <a th:href="@{/admin/products(size=${products.size}, page=${pageNumber})}"
+                           th:text="${pageNumber}"
+                           th:class="${pageNumber==products.number + 1} ? active"></a>
+                    </div>
+                </div>
+                <!-- Row end  -->
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
+<!-- Jquery Core Js -->
+<script src="/admin/dist/assets/bundles/libscripts.bundle.js"></script>
+<!-- Plugin Js -->
+<script src="/admin/dist/assets/bundles/apexcharts.bundle.js"></script>
+<script src="/admin/dist/assets/bundles/dataTables.bundle.js"></script>
+<script src="/admin/dist/assets/js/page/index.js"></script>
+<script src="/admin/maps/api/js?key=AIzaSyB1Jr7axGGkwvHRnNfoOzoVRFV3yOPHJEU&callback=myMap"></script>
+<!-- Jquery Page Js -->
+<script src="/admin/dist/assets/js/template.js"></script>
+<script th:inline="javascript">
+
+    let categories =/*[[${categories==null? '':categories}]]*/;
+    let div = $('#categoryResult');
+    let content = '';
+
+    for (let i = 0; i < categories.length; i++) {
+
+        content +=
+            '   <div class="filter-category">\n' +
+            '       <ul class="category-list">\n' +
+            '           <li><a href="/product?category=' + categories[i].id + '" >' + categories[i].name + '</a>\n' +
+            '           </li>\n' +
+            '       </ul>\n' +
+            '   </div>'
+    }
+    div.append(content)
+
+    $('#searchInput').keyup(function () {
+        div.empty();
+        content = ''
+        let keyword = $(this).val()
+
+        for (let i = 0; i < categories.length; i++) {
+
+            if (categories[i].name.toLowerCase().startsWith(keyword)) {
+                console.log('>>>>>>>>>>', keyword)
+
+                content +=
+                    '   <div class="filter-category">\n' +
+                    '       <ul class="category-list">\n' +
+                    '           <li><a href="/product?category=' + categories[i].id + '" >' + categories[i].name + '</a>\n' +
+                    '           </li>\n' +
+                    '       </ul>\n' +
+                    '   </div>'
+
+            }
+
+        }
+        div.append(content)
+
+    })
+
+    $('#myDataTable')
+        .addClass('nowrap')
+        .dataTable({
+            responsive: true,
+            columnDefs: [{
+                targets: [-1, -3],
+                className: 'dt-body-right'
+            }]
+        });
+</script>
+</body>
+</html>

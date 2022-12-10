@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" xmlns="http://www.w3.org/1999/html" lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Cart &#8211; Noucake</title>
+    <link rel="icon" href="/images/2017/06/favicon.png">
+    <link rel="icon" href="/images/2017/06/favicon.png">
+    <link rel="apple-touch-icon" href="/images/2017/06/favicon.png">
+    <th:block th:insert="web/fragments/fragment.html::headerImport"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::global-styles-inline-css"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::js-css"></th:block>
+
+</head>
+<body class="page-template page-template-page-templates page-template-cart page-template-page-templatescart-php page page-id-5 theme-noucake woocommerce-cart woocommerce-page woocommerce-no-js page-init wpb-js-composer js-comp-ver-6.8.0 vc_responsive currency-usd">
+<th:block th:insert="web/fragments/fragment.html::table"></th:block>
+<div class="ps-searchbox">
+    <div class="ps-searchbox__remove"><i class="fa fa-remove"></i></div>
+    <div class="container">
+        <header>
+            <p>Enter your keywords:</p>
+            <form id="search_header" class="search_header_product " method="get"
+                  action="/bakery/">
+                <input class="form-control" type="text" value="" name="s" autocomplete="off">
+
+                <input type="hidden" name="post_type" value="product">
+                <button type="submit"><i class="ps-icon--search"></i></button>
+            </form>
+        </header>
+        <div class="ps-searchbox__result"></div>
+        <footer class="text-center"><a class="ps-searchbox__morelink" href="#">VIEW ALL RESULT</a></footer>
+    </div>
+</div>
+<div class="header--sidebar"></div>
+<header class="header" data-responsive="1199">
+    <th:block th:insert="web/fragments/fragment.html::USD-EURImport"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::class-navigation-import"></th:block>
+</header>
+<nav class="ps-mobile-nav hidden-lg hidden-md">
+    <ul class="ps-list--footer">
+        <li><a href="/wishlist"><i class="ps-icon--heart"></i><span>Wishlist</span></a></li>
+
+        <li><a href="/my-account"><i class="ps-icon--profile"></i><span>Account</span></a></li>
+
+        <li><a class="ps-search-btn" href="#"><i class="ps-icon--search"></i><span>Search</span></a></li>
+
+        <li><a class="ps-cart-count" href="/"><i class="ps-icon--shopping-cart"></i><span class="quantity"><i
+                class="mobile_cart_content">0</i></span><span>Cart</span></a></li>
+    </ul>
+</nav>
+<div class="page-wrap">
+    <div class="ps-section--hero">
+        <img src="/assets/wp-content2/themes/bakery/assets/images/hero/01.jpg" alt="Cart">
+        <div class="ps-section__content text-center">
+            <h3 class="ps-section__title">Cart</h3>
+
+            <div class="ps-breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="/">Home</a></li>
+                    <li class="active">Cart</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="product-name"><h4>All Products</h4></th>
+                <th class="product-price"><h4>Price</h4></th>
+                <th class="product-quantity"><h4>Quantity</h4></th>
+                <th class="product-subtotal"><h4>Total</h4></th>
+                <th class="product-remove"></th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr class="woocommerce-cart-form__cart-item cart_item" th:each="basket:${basketDto.basketProductDtos}">
+                <td>
+                    <div class="ps-product--cart">
+                        <img width="100" height="107"
+                             th:src="@{/products/getImage(fileName=${basket.product.productPic})}">
+                        <span
+                                th:text="${basket.product.name}" style="font-size: large">
+                           Becky's
+                        Snickerdoodle</span></div>
+                </td>
+
+                <td class="product-price" data-title="Price" th:text="${basket.product.price+'$'}" style="font-size: large">
+                    <span class="woocs_special_price_code"><span class="woocommerce-Price-amount amount"><bdi><span
+                            class="woocommerce-Price-currencySymbol">£</span>29.15</bdi></span></span></td>
+
+                <td class="product-quantity" data-title="Quantity"
+                    style="font-size: large">
+                    <div class="form-group--number quantity">
+                        <button type="button" class="minus"><span>-</span></button>
+                        <input type="number" step="1" min="1" name="cart[fc221309746013ac554571fbd180e1c8][qty]"
+                               value="3" class="form-control input-text qty text" size="4"
+                               th:value="${basket.quantity}">
+                        <button type="button" class="plus"><span>+</span></button>
+                    </div>
+                </td>
+                <td data-title="Subtotal" th:text="${basket.product.price+'$'}" style="font-size: large">
+								<span class="total-row">
+									<span class="woocs_special_price_code"><span
+                                            class="woocommerce-Price-amount amount"><bdi><span
+                                            class="woocommerce-Price-currencySymbol">£</span>87.45</bdi></span></span>								</span>
+                </td>
+                <td data-title="Remove" class="ps-cart-item">
+                    <a class="ps-cart-item__close remove ps-cart-listing__remove " title="Remove this item"
+                       data-key="fc221309746013ac554571fbd180e1c8"
+                       th:attr="data-product_id=${basket.product.id}"
+                       data-product_sku="HGEGX27"></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="ps-cart__process">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 actions">
+
+                <div class="form-groupform-order">
+                    <a class="ps-cart__shopping btn-black back-to-shop" href=/"products/shop/?view=list">Continue
+                        Shopping</a>
+                </div>
+
+
+                <input type="hidden" id="_wpnonce" name="_wpnonce" value="1fb6a8f96b"><input type="hidden"
+                                                                                             name="_wp_http_referer"
+                                                                                             value="/wordpress/bakery/cart/">
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+                <div class="ps-cart__total cart-collaterals">
+                    <div class="cart_totals ">
+
+
+                        <table cellspacing="0" class="table shop_table shop_table_responsive">
+
+                            <tbody>
+                            <tr class="cart-subtotal">
+                                <th>Subtotal</th>
+                                <td data-title="Subtotal">
+                                    <span class="woocs_special_price_code"><span
+                                            class="woocommerce-Price-amount amount"><bdi><span
+                                            class="woocommerce-Price-currencySymbol">£</span>[[${basketDto.total}]]$</bdi></span></span>
+                                </td>
+                            </tr>
+
+
+                            </tbody>
+                        </table>
+
+                        <div class="wc-proceed-to-checkout">
+                            <button class="ps-btn ps-btn--sm ps-btn--fullwidth button btn-black" name="update_cart"
+                                    value="Update cart" disabled="" aria-disabled="true">Update cart
+                            </button>
+                            <a href="/payment/card/add"
+                               class="ps-btn ps-btn--sm ps-btn--fullwidth checkout-button button alt wc-forward">
+                                Proceed to checkout</a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div><!--End .page-wrap-->
+
+<div th:insert="web/fragments/fragment.html::aboutUs"></div>
+<div th:insert="web/fragments/fragment.html::footerImport"></div>
+<div th:insert="web/fragments/fragment.html::underFooterImport"></div>
+<div th:insert="web/fragments/fragment.html::text_javascript"></div>
+
+</body>
+</html>

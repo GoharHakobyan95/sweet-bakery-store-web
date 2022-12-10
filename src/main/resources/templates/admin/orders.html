@@ -1,0 +1,176 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>::eBakery:: Dashboard</title>
+    <link rel="icon" href="/admin/favicon.ico" type="image/x-icon"> <!-- Favicon-->
+
+    <!-- plugin css file  -->
+    <link rel="stylesheet" href="/admin/dist/assets/plugin/datatables/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="/admin/dist/assets/plugin/datatables/dataTables.bootstrap5.min.css">
+    <!-- project css file  -->
+    <link rel="stylesheet" href="/ebazar.style.min.css">
+</head>
+
+<body>
+<div id="ebazar-layout" class="theme-blue">
+
+    <!-- sidebar -->
+    <div th:insert="/admin/fragments/fragment::slidebar"></div>
+    <!-- main body area -->
+    <div class="main px-lg-4 px-md-4">
+        <div th:insert="/admin/fragments/fragment::headerImport"></div>
+
+        <!-- Body: Body -->
+        <div class="body d-flex py-3">
+            <div class="container-xxl">
+                <div class="row g-3">
+                    <div class="border-0 mb-4">
+                        <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
+                            <h3 class="fw-bold mb-0">Orders List</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="tab-filter d-flex align-items-center justify-content-between mb-3 flex-wrap">
+
+                            <div class="date-filter d-flex align-items-center mt-2 mt-sm-0 w-sm-100">
+                                <div class="input-group">
+
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-body">
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <table id="myDataTable"
+                                                               class="table table-hover align-middle mb-0 nowrap dataTable no-footer dtr-inline"
+                                                               style="width: 100%;" role="grid"
+                                                               aria-describedby="myDataTable_info">
+                                                            <thead>
+                                                            <tr role="row">
+                                                                <th class="sorting_asc" tabindex="0"
+                                                                    aria-controls="myDataTable" rowspan="1"
+                                                                    colspan="1"
+                                                                    style="width: 140.2px;" aria-sort="ascending"
+                                                                    aria-label="Id: activate to sort column descending">
+                                                                    Id
+                                                                </th>
+                                                                <th class="sorting" tabindex="0"
+                                                                    aria-controls="myDataTable" rowspan="1"
+                                                                    colspan="1"
+                                                                    style="width: 216.2px;"
+                                                                    aria-label="Item: activate to sort column ascending">
+                                                                    Item Picture
+                                                                </th>
+                                                                <th class="sorting" tabindex="0"
+                                                                    aria-controls="myDataTable" rowspan="1"
+                                                                    colspan="1"
+                                                                    style="width: 216.2px;"
+                                                                    aria-label="Item: activate to sort column ascending">
+                                                                    Item
+                                                                </th>
+                                                                <th class="sorting" tabindex="0"
+                                                                    aria-controls="myDataTable" rowspan="1"
+                                                                    colspan="1"
+                                                                    style="width: 181.2px;"
+                                                                    aria-label="Customer Name: activate to sort column ascending">
+                                                                    Customer Name
+                                                                </th>
+                                                                <th class="dt-body-right sorting" tabindex="0"
+                                                                    aria-controls="myDataTable" rowspan="1"
+                                                                    colspan="1"
+                                                                    style="width: 160.2px;"
+                                                                    aria-label="Payment Info: activate to sort column ascending">
+                                                                    Payment Info
+                                                                </th>
+                                                                <th class="sorting" tabindex="0"
+                                                                    aria-controls="myDataTable" rowspan="1"
+                                                                    colspan="1"
+                                                                    style="width: 74.2px;"
+                                                                    aria-label="Price: activate to sort column ascending">
+                                                                    Address
+                                                                </th>
+                                                                <th class="dt-body-right sorting" tabindex="0"
+                                                                    aria-controls="myDataTable" rowspan="1"
+                                                                    colspan="1"
+                                                                    style="width: 99.2px;"
+                                                                    aria-label="Status: activate to sort column ascending">
+                                                                    Order Status
+                                                                </th>
+                                                                <th class="dt-body-right sorting" tabindex="0"
+                                                                    aria-controls="myDataTable" rowspan="1"
+                                                                    colspan="1"
+                                                                    style="width: 99.2px;"
+                                                                    aria-label="Status: activate to sort column ascending">
+                                                                    Date
+                                                                </th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr role="row" class="odd" th:each="order, iter: ${orders}">
+                                                                <td th:text="${iter.index+1}" tabindex="0"
+                                                                    class="sorting_1"></td>
+                                                                <td>
+                                                                    <img th:if="${order.product.productPic != null}"
+                                                                         th:src="@{/admin/orders/getImage(fileName=${order.product.productPic})}"
+                                                                         height=100 width=100>
+                                                                </td>
+                                                                <td th:text="${order.product.name}"></td>
+                                                                <td th:text="${order.user.name + ' '+ order.user.surname}"></td>
+                                                                <td class=" dt-body-right"
+                                                                    th:text="${order.payment.status}"></td>
+                                                                <td th:text="${order.address.city.name+ ' '+ order.address.name}"></td>
+                                                                <td class=" dt-body-right"
+                                                                    th:text="${order.orderStatus}"></td>
+                                                                <td th:text="${order.orderDate}"></td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div th:if="${orders.totalPages > 0}" class="page"
+                                                             th:each="pageNumber : ${pageNumbers}">
+                                                            <a th:href="@{/admin/orders(size=${orders.size}, page=${pageNumber})}"
+                                                               th:text="${pageNumber}"
+                                                               th:class="${pageNumber==orders.number + 1} ? active"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Row end  -->
+<!-- Jquery Core Js -->
+<script src="/admin/dist/assets/bundles/libscripts.bundle.js"></script>
+<!-- Plugin Js -->
+<script src="/admin/dist/assets/bundles/apexcharts.bundle.js"></script>
+<script src="/admin/dist/assets/bundles/dataTables.bundle.js"></script>
+<script src="/admin/dist/assets/js/page/index.js"></script>
+<script src="/admin/maps/api/js?key=AIzaSyB1Jr7axGGkwvHRnNfoOzoVRFV3yOPHJEU&callback=myMap"></script>
+<!-- Jquery Page Js -->
+<script src="/admin/dist/assets/js/template.js"></script>
+<script>
+    $('#myDataTable')
+        .addClass('nowrap')
+        .dataTable({
+            responsive: true,
+            columnDefs: [{
+                targets: [-1, -3],
+                className: 'dt-body-right'
+            }]
+        });
+</script>
+</body>
+
+</html>

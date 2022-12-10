@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Menu #1 &#8211; Noucake</title>
+    <link rel="icon" href="/images/2017/06/favicon.png" >
+    <link rel="icon" href="/images/2017/06/favicon.png">
+    <link rel="apple-touch-icon" href="/images/2017/06/favicon.png">
+    <th:block th:insert="web/fragments/fragment.html::headerImport"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::global-styles-inline-css"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::js-css"></th:block>
+
+</head>
+<body class="page-template page-template-page-templates page-template-full-width page-template-page-templatesfull-width-php page page-id-227 theme-noucake woocommerce-no-js page-init wpb-js-composer js-comp-ver-6.8.0 vc_responsive currency-eur">
+<th:block th:insert="web/fragments/fragment.html::table"></th:block>
+<div class="ps-searchbox">
+    <div class="ps-searchbox__remove"><i class="fa fa-remove"></i></div>
+    <div class="container">
+        <header>
+            <p>Enter your keywords:</p>
+            <form id="search_header" class="search_header_product " method="get"
+                  action="/bakery/">
+                <input class="form-control" type="text" value="" name="s" autocomplete="off">
+
+                <input type="hidden" name="post_type" value="product">
+                <button type="submit"><i class="ps-icon--search"></i></button>
+            </form>
+        </header>
+        <div class="ps-searchbox__result"></div>
+        <footer class="text-center"><a class="ps-searchbox__morelink" href="#">VIEW ALL RESULT</a></footer>
+    </div>
+</div>
+<div class="header--sidebar"></div>
+<header class="header" data-responsive="1199">
+    <th:block th:insert="web/fragments/fragment.html::USD-EURImport"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::class-navigation-import"></th:block>
+</header>
+<nav class="ps-mobile-nav hidden-lg hidden-md">
+    <ul class="ps-list--footer">
+        <li><a href="/wishlist"><i class="ps-icon--heart"></i><span>Wishlist</span></a></li>
+
+        <li><a href="/my_account"><i class="ps-icon--profile"></i><span>Account</span></a></li>
+
+        <li><a class="ps-search-btn" href="#"><i class="ps-icon--search"></i><span>Search</span></a></li>
+
+        <li><a class="ps-cart-count" href="/cart"><i class="ps-icon--shopping-cart"></i><span
+                class="quantity"><i class="mobile_cart_content">116</i></span><span>Cart</span></a></li>
+    </ul>
+</nav>
+<div class="page-wrap">
+    <div class="ps-section--hero">
+        <img src="/assets/wp-content2/themes/bakery/assets/images/hero/01.jpg" alt="Menu #1">
+        <div class="ps-section__content text-center">
+            <h3 class="ps-section__title">Menu #1</h3>
+
+            <div class="ps-breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="/">Home</a></li>
+                    <li class="active">Menu #1</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+    <div th:insert="web/fragments/fragment.html::menuImport"></div>
+    <div th:insert="web/fragments/fragment.html::contactUsImport"></div>
+    <div th:insert="web/fragments/fragment.html::aboutUs"></div>
+    <div th:insert="web/fragments/fragment.html::footerImport"></div>
+    <div th:insert="web/fragments/fragment.html::underFooterImport"></div>
+    <div th:insert="web/fragments/fragment.html::text_javascript"></div>
+</body>
+</html>

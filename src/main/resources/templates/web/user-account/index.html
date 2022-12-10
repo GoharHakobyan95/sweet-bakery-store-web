@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>My account &#8211; Noucake</title>
+    <link rel="icon" href="/images/2017/06/favicon.png">
+    <link rel="icon" href="/images/2017/06/favicon.png">
+    <link rel="apple-touch-icon" href="/images/2017/06/favicon.png">
+    <th:block th:insert="web/fragments/fragment.html::headerImport"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::global-styles-inline-css"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::js-css"></th:block>
+
+</head>
+<body class="page-template page-template-page-templates page-template-full-width page-template-page-templatesfull-width-php page page-id-7 theme-noucake woocommerce-account woocommerce-page woocommerce-no-js page-init wpb-js-composer js-comp-ver-6.8.0 vc_responsive currency-usd">
+<th:block th:insert="web/fragments/fragment.html::table"></th:block>
+
+<div class="ps-searchbox">
+    <div class="ps-searchbox__remove"><i class="fa fa-remove"></i></div>
+    <div class="container">
+        <header>
+            <p>Enter your keywords:</p>
+            <form id="search_header" class="search_header_product " method="get"
+                  action="/bakery/">
+                <input class="form-control" type="text" value="" name="s" autocomplete="off">
+
+                <input type="hidden" name="post_type" value="product">
+                <button type="submit"><i class="ps-icon--search"></i></button>
+            </form>
+        </header>
+        <div class="ps-searchbox__result"></div>
+        <footer class="text-center"><a class="ps-searchbox__morelink" href="#">VIEW ALL RESULT</a></footer>
+    </div>
+</div>
+<div class="header--sidebar"></div>
+<header class="header" data-responsive="1199">
+
+    <th:block th:insert="web/fragments/fragment.html::USD-EURImport"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::class-navigation-import"></th:block>
+
+</header>
+<nav class="ps-mobile-nav hidden-lg hidden-md">
+    <ul class="ps-list--footer">
+        <li><a href="https://warethemes.com/wordpress/bakery/wishlist/"><i
+                class="ps-icon--heart"></i><span>Wishlist</span></a></li>
+
+        <li><a href="https://warethemes.com/wordpress/bakery/my-account/"><i
+                class="ps-icon--profile"></i><span>Account</span></a></li>
+
+        <li><a class="ps-search-btn" href="#"><i class="ps-icon--search"></i><span>Search</span></a></li>
+
+        <li><a class="ps-cart-count" href="https://warethemes.com/wordpress/bakery/cart/"><i
+                class="ps-icon--shopping-cart"></i><span class="quantity"><i
+                class="mobile_cart_content">0</i></span><span>Cart</span></a></li>
+    </ul>
+</nav>
+<div class="page-wrap">
+    <div class="ps-section--hero">
+        <img src="https://warethemes.com/wordpress/bakery/wp-content/themes/bakery/assets/images/hero/01.jpg"
+             alt="My account">
+        <div class="ps-section__content text-center">
+            <h3 class="ps-section__title">My account</h3>
+
+            <div class="ps-breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="https://warethemes.com/wordpress/bakery">Home</a></li>
+                    <li class="active">My account</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="ps-section row wpb_row vc_row-fluid pt-40 pb-40">
+        <div class="container">
+            <div class="wpb_column vc_column_container vc_col-sm-12">
+                <div class="vc_column-inner">
+                    <div class="wpb_wrapper">
+                        <div class="woocommerce">
+                            <nav class="woocommerce-MyAccount-navigation">
+                                <ul>
+                                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
+                                        <a href="/user/my-account">Dashboard</a>
+                                    </li>
+                                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders ">
+                                        <a href="/user/my-orders">Orders</a>
+                                    </li>
+                                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
+                                        <a th:href="${'/user/edit-address?id='+currentUser.id}">Addresses</a>
+                                    </li>
+                                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
+                                        <a href="/user/my-account-edit">Account
+                                            details</a>
+                                    </li>
+                                    <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
+                                        <a href="/logout">Logout</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="woocommerce-MyAccount-content">
+                                <div class="woocommerce-notices-wrapper"></div>
+                                <p>
+                                    Hello <strong>a</strong> (not <strong>a</strong>? <a
+                                        href="/logout">Log
+                                    out</a>)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div><!--End .page-wrap-->
+
+</div><!--End .page-wrap-->
+
+<div id="back2top"><i class="fa fa-angle-up"></i></div>
+<div class="loader"></div>
+<section class="ps-section ps-section--subscribe pt-80 pb-80">
+    <div class="container">
+        <div class="ps-subscribe">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 ">
+                    <h4>ABOUT US</h4>
+                    <p>Te pri oblique ullamcorper, magna persequeris has eu. Mei prompta dolores examad debet suavitate.
+                        Pri te vocibus electram. Eu eleifend rationibus vis, at.</p>
+                    <p class="text-uppercase ps-subscribe__highlight">240 CENTRAL PARK, LONDON, OR 10019</p>
+                </div>
+
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 ">
+                    <a class="ps-subscribe__logo" href="https://warethemes.com/wordpress/bakery/">
+                        <img src="https://warethemes.com/wordpress/bakery/wp-content/themes/bakery/assets/images/logo-1.png"
+                             alt="Noucake">
+                    </a>
+                </div>
+
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 ">
+                    <h4>SUBSCRIBE EMAIL</h4>
+                    <p>Te pri oblique ullamcorper, magna persequeris has eu. Mei prompta dolores examad debet suavitate.
+                        Pri te vocibus electram. Eu eleifend rationibus vis, at.</p>
+                    <form class="ps-subscribe__form" method="post"
+                          action="https://warethemes.com/wordpress/bakery/?na=s">
+                        <input class="form-control" type="text" placeholder="Type your email..." name="ne">
+                        <button class="ps-btn ps-btn--sm">Subscribe</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="ps-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="ps-widget ps-widget--footer widget noubakery_theme_widget_payment_img-2 ps-widget--payment">
+                    <h3 class="ps-widget__title">PAYMENTS ACCEPTED</h3>
+                    <ul>
+                        <li><a href="https://d2t7yabstfp7fz.cloudfront.net/2019/09/thanhtoan.png"><img
+                                src="https://d2t7yabstfp7fz.cloudfront.net/2019/09/thanhtoan.png"
+                                alt="PAYMENTS ACCEPTED"/></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="ps-widget ps-widget--footer widget noubakery_theme_widget_worktime-2 ps-widget--worktime">
+                    <h3 class="ps-widget__title">WORK TIME</h3>
+                    <p><strong>Monday - Friday</strong> 8:00 am - 8:30 pm</p>
+                    <p><strong>Satuday - Sunday</strong>10:00 am - 16:32 pm</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="ps-widget ps-widget--footer widget nav_menu-2 widget_nav_menu"><h3 class="ps-widget__title">
+                    ORDERS AND RETURNS</h3>
+                    <ul id="menu-orders-and-returns" class="ps-list--line">
+                        <li id="menu-item-455"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-455"><a href="#">Order</a>
+                        </li>
+                        <li id="menu-item-458"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-458"><a href="#">Payments</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="ps-widget ps-widget--footer widget noubakery_theme_widget_social-2 ps-widget--connect"><h3
+                        class="ps-widget__title">CONNECT US</h3>
+                    <ul class="ps-widget__social">
+                        <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                    <div class="footer-copyright"><p>© 2017 Design by<a href="#"> Alena Studio</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="modal-popup mfp-with-anim mfp-hide" id="quickview-modal" tabindex="-1">
+    <button class="modal-close"><i class="fa fa-remove"></i></button>
+    <div class="ps-product-modal ps-product--detail clearfix">
+        <span class="cart-loading"><i class="fa fa-spinner fa-spin"></i></span>
+        <div id="product-199"
+             class="post-199 product type-product status-publish has-post-thumbnail product_cat-music product_cat-singles first instock featured shipping-taxable purchasable product-type-simple">
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 ">
+                <div class="ps-product__thumbnail">
+                    <div class="quickview--main" data-owl-auto="true" data-owl-loop="false" data-owl-speed="10000"
+                         data-owl-gap="0" data-owl-nav="false" data-owl-dots="false" data-owl-animate-in=""
+                         data-owl-animate-out="" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1"
+                         data-owl-item-md="1" data-owl-item-lg="1"
+                         data-owl-nav-left="&lt;i class=&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt;"
+                         data-owl-nav-right="&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;">
+                        <div class="ps-product__image">
+                            <img src="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-6-458x493.jpg"
+                                 alt="Sweet Cakes"/>
+                        </div>
+                        <div class="ps-product__image">
+                            <img src="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-7-458x493.jpg"
+                                 alt="Sweet Cakes"/>
+                        </div>
+                        <div class="ps-product__image">
+                            <img src="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-5-458x493.jpg"
+                                 alt="Sweet Cakes"/>
+                        </div>
+                        <div class="ps-product__image">
+                            <img src="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-4-458x493.jpg"
+                                 alt="Sweet Cakes"/>
+                        </div>
+                        <div class="ps-product__image">
+                            <img src="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-3-458x493.jpg"
+                                 alt="Sweet Cakes"/>
+                        </div>
+                        <div class="ps-product__image">
+                            <img src="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-2-458x493.jpg"
+                                 alt="Sweet Cakes"/>
+                        </div>
+                        <div class="ps-product__image">
+                            <img src="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-1-458x493.jpg"
+                                 alt="Sweet Cakes"/>
+                        </div>
+                    </div>
+                    <div class="quickview--thumbnail" data-owl-auto="true" data-owl-loop="false" data-owl-speed="10000"
+                         data-owl-gap="20" data-owl-nav="false" data-owl-dots="false" data-owl-animate-in=""
+                         data-owl-animate-out="" data-owl-item="4" data-owl-item-xs="2" data-owl-item-sm="3"
+                         data-owl-item-md="4" data-owl-item-lg="4"
+                         data-owl-nav-left="&lt;i class=&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt;"
+                         data-owl-nav-right="&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;">
+                        <img src="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-6-100x107.jpg"
+                             alt="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-6-100x107.jpg"/>
+                        <img src="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-7-100x107.jpg"
+                             alt="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-7-100x107.jpg"/>
+                        <img src="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-5-100x107.jpg"
+                             alt="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-5-100x107.jpg"/>
+                        <img src="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-4-100x107.jpg"
+                             alt="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-4-100x107.jpg"/>
+                        <img src="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-3-100x107.jpg"
+                             alt="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-3-100x107.jpg"/>
+                        <img src="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-2-100x107.jpg"
+                             alt="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-2-100x107.jpg"/>
+                        <img src="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-1-100x107.jpg"
+                             alt="https://d2t7yabstfp7fz.cloudfront.net/2013/06/img-cake-1-100x107.jpg"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 ">
+                <header>
+                    <h3 class="ps-product__name">Sweet Cakes</h3>
+                    <select class="ps-rating rating-0">
+                        <option value="0" selected='selected'>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <p class="ps-product__price price-for-default"><span class="woocs_price_code" data-product-id="199"><span
+                            class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">&pound;</span>49.14</bdi></span></span>
+                    </p>
+                    <p class="ps-product__price price-for-varian"></p>
+                    <div class="ps-product__meta">
+                        <p><span>Availability: </span> 20 in stock</p>
+                        <p class="panel-product-line panel-product-info">
+                            <span class="panel-product-label">SKU:</span> <span class="sku-for-default sku-value">HGEGX12</span><span
+                                class="sku-for-varian sku-value"></span>
+                        </p>
+                        <p class="category"><span>Categories:</span> <a
+                                href="https://warethemes.com/wordpress/bakery/product-category/music/"
+                                rel="tag">Music</a>,
+                            <a href="https://warethemes.com/wordpress/bakery/product-category/music/singles/" rel="tag">Singles</a>
+                        </p>
+                    </div>
+                    <form class="cart" method="post" enctype='multipart/form-data'>
+                        <div class="ps-product__shop">
+                            <div class="form-group--number quantity">
+                                <button type="button" class="minus"><span>-</span></button>
+                                <input type="number" step="1" min="1" max="20" name="quantity" value="1"
+                                       class="form-control input-text qty text" size="4"/>
+                                <button type="button" class="plus"><span>+</span></button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-5 col-sm-6 col-xs-12 ">
+                                <button type="submit" name="add-to-cart" value="199"
+                                        class="single_add_to_cart_button button alt ps-btn--fullwidth ps-btn">Add to
+                                    cart <i class="fa fa-angle-right"></i></button>
+                            </div>
+                            <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12 ">
+                                <p class="noubakery-share-post ps-product__sharing"
+                                   data-url="https://warethemes.com/wordpress/bakery/product/sweet-cakes/"
+                                   data-title="Sweet Cakes">
+                                    Share with:
+                                    <a href="#" data-type="facebook" class="share"><i class="fa fa-facebook"></i></a>
+                                    <a href="#" data-type="google" class="share"><i class="fa fa-google-plus"></i></a>
+
+                                    <a href="#" data-type="twitter" class="share"><i class="fa fa-twitter"></i></a>
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </header>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="web/fragments/fragment.html::text_javascript"></div>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Checkout &#8211; Noucake</title>
+    <link rel="icon" href="/images/2017/06/favicon.png">
+    <link rel="icon" href="/images/2017/06/favicon.png">
+    <link rel="apple-touch-icon" href="/images/2017/06/favicon.png">
+    <th:block th:insert="web/fragments/fragment.html::headerImport"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::global-styles-inline-css"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::js-css"></th:block>
+
+</head>
+<body data-rsssl=1
+      class="page-template page-template-page-templates page-template-checkout page-template-page-templatescheckout-php page page-id-6 theme-noucake woocommerce-checkout woocommerce-page woocommerce-no-js page-init wpb-js-composer js-comp-ver-6.8.0 vc_responsive currency-usd">
+<th:block th:insert="web/fragments/fragment.html::table"></th:block>
+
+<div class="ps-searchbox">
+    <div class="ps-searchbox__remove"><i class="fa fa-remove"></i></div>
+    <div class="container">
+        <header>
+            <p>Enter your keywords:</p>
+            <form id="search_header" class="search_header_product " method="get"
+                  action="/">
+                <input class="form-control" type="text" value="" name="s" autocomplete="off">
+
+                <input type="hidden" name="post_type" value="product">
+                <button type="submit"><i class="ps-icon--search"></i></button>
+            </form>
+        </header>
+        <div class="ps-searchbox__result"></div>
+        <footer class="text-center"><a class="ps-searchbox__morelink" href="#">VIEW ALL RESULT</a></footer>
+    </div>
+</div>
+<div class="header--sidebar"></div>
+<header class="header" data-responsive="1199">
+    <th:block th:insert="web/fragments/fragment.html::USD-EURImport"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::class-navigation-import"></th:block>
+</header>
+
+<nav class="ps-mobile-nav hidden-lg hidden-md">
+    <ul class="ps-list--footer">
+        <li><a href="../wishlist/index.html"><i
+                class="ps-icon--heart"></i><span>Wishlist</span></a></li>
+
+        <li><a href="../../login-page.html"><i
+                class="ps-icon--profile"></i><span>Account</span></a></li>
+
+        <li><a class="ps-search-btn" href="#"><i class="ps-icon--search"></i><span>Search</span></a></li>
+
+        <li><a class="ps-cart-count" href="../cart/index.html"><i
+                class="ps-icon--shopping-cart"></i><span class="quantity"><i
+                class="mobile_cart_content">1</i></span><span>Cart</span></a></li>
+    </ul>
+</nav>
+<div class="page-wrap">
+    <div class="ps-section--hero">
+        <img src="https://warethemes.com/wordpress/bakery/wp-content/themes/bakery/assets/images/hero/01.jpg"
+             alt="Checkout">
+        <div class="ps-section__content text-center">
+            <h3 class="ps-section__title">Checkout</h3>
+
+            <div class="ps-breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="/">Home</a></li>
+                    <li class="active">Checkout</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+    <div class="ps-section--checkout pt-80 pb-80">
+        <div class="container">
+            <div class="woocommerce">
+                <div class="woocommerce-notices-wrapper"></div>
+                <div class="row">
+                </div>
+
+                <div class="woocommerce-notices-wrapper"></div>
+                <form action="/payment/card/add" name="checkout" method="post"
+                      class="ps-checkout checkout woocommerce-checkout"
+                      th:object="${checkoutDto}" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="customer_details">
+                            <div class="ps-checkout__billing">
+                                <div class="woocommerce-billing-fields">
+                                    <h3>Billing details</h3>
+                                    <div class="woocommerce-billing-fields__field-wrapper">
+                                        <p class="form-row form-row-first form-group validate-required"
+                                           id="billing_first_name_field" data-priority="10"><label
+                                                for="billing_first_name" class="">First name&nbsp;<abbr class="required"
+                                                                                                        title="required">*</abbr></label><span
+                                                class="woocommerce-input-wrapper"><input type="text"
+                                                                                         class="input-text  form-control"
+                                                                                         name="billing_first_name"
+                                                                                         id="billing_first_name"
+                                                                                         placeholder=""
+                                                                                         th:value="${currentUser.name}"
+                                                                                         autocomplete="given-name"/></span>
+                                        </p>
+                                        <p class="form-row form-row-last form-group validate-required"
+                                           id="billing_last_name_field" data-priority="20"><label
+                                                for="billing_last_name" class="">Last name&nbsp;<abbr class="required"
+                                                                                                      title="required">*</abbr></label><span
+                                                class="woocommerce-input-wrapper"><input type="text"
+                                                                                         class="input-text  form-control"
+                                                                                         name="billing_last_name"
+                                                                                         id="billing_last_name"
+                                                                                         placeholder=""
+                                                                                         th:value="${currentUser.surname}"
+                                                                                         autocomplete="family-name"/></span>
+                                        </p>
+                                        <p class="form-row form-row-wide form-group"
+                                           data-priority="30"><label for="card_number" class="">Card
+                                            number<span
+                                                    class="optional"></span></label><span
+                                                class="woocommerce-input-wrapper"><input type="text"
+                                                                                         class="input-text  form-control"
+                                                                                         name="cardNumber"
+                                                                                         id="card_number"
+                                                                                         placeholder="Card number"
+                                                                                         th:field="*{cardNumber}"
+                                                                                         autocomplete="organization"/></span>
+                                        <p th:if="${#fields.hasErrors('cardNumber')}"
+                                           th:errors="*{cardNumber}" th:class="error"></p>
+                                        <p class="form-row form-row-wide form-group"
+                                           data-priority="40"><label for="cvc_code" class="">Cvc_code</label><span
+                                                class="woocommerce-input-wrapper"><input type="text"
+                                                                                         name="cvcCode"
+                                                                                         th:field="*{cvcCode}"
+                                                                                         id="cvc_code"
+                                                                                         class="input-text  form-control"
+                                                                                         autocomplete="Cvc_code"
+                                                                                         data-placeholder="CVC Code"></span>
+                                        </p>
+                                        <p th:if="${#fields.hasErrors('cvcCode')}"
+                                           th:errors="*{cvcCode}" th:class="error"></p>
+
+                                        <p class="form-row form-row-wide form-group validate-required"
+                                           data-priority="50"><label
+                                                for="expiration_date" class="">Expiration_date<abbr
+                                                class="required" title="required">*</abbr></label><span
+                                                class="woocommerce-input-wrapper"><input type="date"
+                                                                                         class="input-text  form-control"
+                                                                                         name="expirationDate"
+                                                                                         th:field="*{expirationDate}"
+                                                                                         id="expiration_date"
+                                                                                         placeholder="Card's expiration_date"
+                                                                                         value=""
+                                                                                         autocomplete="address-line1"/></span>
+                                        </p>
+                                        <p th:if="${#fields.hasErrors('expirationDate')}"
+                                           th:errors="*{expirationDate}" th:class="error"></p>
+
+                                        <p class="form-row form-row-wide form-group validate-required"
+                                           data-priority="50"><label
+                                                for="card_type" class="">Card_type<abbr
+                                                class="required" title="required">*</abbr></label>
+                                            <select class="input-text  form-control"
+                                                    name="cardType"
+                                                    id="card_type">
+                                                <option value="VISA">VISA</option>
+                                                <option value="MASTERCARD">MASTERCARD</option>
+                                                <option value="MAESTRO">MAESTRO</option>
+                                            </select>
+                                        </p>
+
+                                        <p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
+                                            <label for="wishNotes">Write your wishes <span
+                                                    class="required">*</span></label>
+                                            <textarea type="text"
+                                                      class="woocommerce-Input woocommerce-Input--text input-text form-control"
+                                                      th:field="*{wishNotes}" id="wishNotes"></textarea>
+                                        </p>
+
+                                        <p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
+                                            <label for="isGift">Is this product for gift ? </label>
+                                            <select class="woocommerce-Input woocommerce-Input--email input-text form-control"
+                                                    id="isGift" autocomplete="isGift" th:field="*{gift}">
+                                                <option  value="true">YES</option>
+                                                <option  value="false">NO</option></option>
+                                            </select>
+                                        </p>
+
+                                        <input type="hidden" name="productId" th:if="${param.productId}" th:value="${param.productId}">
+                                        <input type="hidden" name="quantity" th:if="${param.quantity}" th:value="${param.quantity}">
+
+                                        <button type="submit"
+                                                class="ps-btn ps-btn--sm button alt"
+                                                name="link" value="Link card to your account">Pay
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+                            <div class="ps-checkout__order">
+                                <h3 id="order_review_heading">Your order</h3>
+
+                                <div id="order_review" class="woocommerce-checkout-review-order">
+                                    <table class="table shop_table woocommerce-checkout-review-order-table">
+                                        <thead>
+                                        <tr>
+                                            <th class="text-uppercase">Product</th>
+                                            <th class="text-uppercase">Total</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="cart_item">
+                                            <td class="product-name">
+                                                Honey Lemon Cupcakes&nbsp; <strong class="product-quantity">&times;&nbsp;1</strong>
+                                            </td>
+                                            <td class="product-total">
+                                                <span class="woocs_special_price_code"><span
+                                                        class="woocommerce-Price-amount amount"><bdi><span
+                                                        class="woocommerce-Price-currencySymbol">&#36;</span>15.00</bdi></span></span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                        <tfoot>
+
+                                        <tr class="cart-subtotal">
+                                            <th>Subtotal</th>
+                                            <td><span class="woocs_special_price_code"><span
+                                                    class="woocommerce-Price-amount amount"><bdi><span
+                                                    class="woocommerce-Price-currencySymbol">&#36;</span>15.00</bdi></span></span>
+                                            </td>
+                                        </tr>
+
+
+                                        <tr class="shipping">
+                                            <th>Shipping</th>
+                                            <td data-title="Shipping">
+                                                <ul id="shipping_method">
+                                                    <li class="form-group">
+                                                        <p class="radio"><label
+                                                                for="shipping_method_0_flat_rate1"><input type="radio"
+                                                                                                          name="shipping_method[0]"
+                                                                                                          data-index="0"
+                                                                                                          id="shipping_method_0_flat_rate1"
+                                                                                                          value="flat_rate:1"
+                                                                                                          class="shipping_method"
+                                                                                                          checked='checked'/>
+                                                            Flat rate</label></p></li>
+                                                    <li class="form-group">
+                                                        <p class="radio"><label
+                                                                for="shipping_method_0_local_pickup2"><input
+                                                                type="radio" name="shipping_method[0]" data-index="0"
+                                                                id="shipping_method_0_local_pickup2"
+                                                                value="local_pickup:2" class="shipping_method"/>
+                                                            Local pickup</label></p></li>
+                                                    <li class="form-group">
+                                                        <p class="radio"><label
+                                                                for="shipping_method_0_free_shipping3"><input
+                                                                type="radio" name="shipping_method[0]" data-index="0"
+                                                                id="shipping_method_0_free_shipping3"
+                                                                value="free_shipping:3" class="shipping_method"/>
+                                                            Free shipping</label></p></li>
+                                                </ul>
+
+
+                                            </td>
+                                        </tr>
+
+
+                                        <tr class="order-total">
+                                            <th>Total</th>
+                                            <td><strong><span class="woocs_special_price_code"><span
+                                                    class="woocommerce-Price-amount amount"><bdi><span
+                                                    class="woocommerce-Price-currencySymbol">&#36;</span>15.00</bdi></span></span></strong>
+                                            </td>
+                                        </tr>
+
+
+                                        </tfoot>
+                                    </table>
+                                    <div id="payment" class="woocommerce-checkout-payment">
+                                        <h3>Payment Method</h3>
+                                        <div class="wc_payment_methods payment_methods methods form-group">
+                                            <div class="wc_payment_method payment_method_bacs">
+                                                <div class="radio">
+                                                    <label for="payment_method_bacs">
+                                                        <input id="payment_method_bacs" type="radio" class="input-radio"
+                                                               name="payment_method" value="bacs" checked='checked'
+                                                               data-order_button_text=""/>
+                                                        Direct bank transfer </label>
+                                                </div>
+                                                <div class="payment_box payment_method_bacs">
+                                                    <p>Make your payment directly into our bank account. Please use your
+                                                        Order ID as the payment reference. Your order will not be
+                                                        shipped until the funds have cleared in our account.</p>
+                                                </div>
+                                            </div>
+                                            <div class="wc_payment_method payment_method_cheque">
+                                                <div class="radio">
+                                                    <label for="payment_method_cheque">
+                                                        <input id="payment_method_cheque" type="radio"
+                                                               class="input-radio" name="payment_method" value="cheque"
+                                                               data-order_button_text=""/>
+                                                        Check payments </label>
+                                                </div>
+                                                <div class="payment_box payment_method_cheque" style="display:none;">
+                                                    <p>Please send a check to Store Name, Store Street, Store Town,
+                                                        Store State / County, Store Postcode.</p>
+                                                </div>
+                                            </div>
+                                            <div class="wc_payment_method payment_method_cod">
+                                                <div class="radio">
+                                                    <label for="payment_method_cod">
+                                                        <input id="payment_method_cod" type="radio" class="input-radio"
+                                                               name="payment_method" value="cod"
+                                                               data-order_button_text=""/>
+                                                        Cash on delivery </label>
+                                                </div>
+                                                <div class="payment_box payment_method_cod" style="display:none;">
+                                                    <p>Pay with cash upon delivery.</p>
+                                                </div>
+                                            </div>
+                                            <div class="wc_payment_method payment_method_paypal">
+                                                <div class="radio">
+                                                    <label for="payment_method_paypal">
+                                                        <input id="payment_method_paypal" type="radio"
+                                                               class="input-radio" name="payment_method" value="paypal"
+                                                               data-order_button_text="Proceed to PayPal"/>
+                                                        PayPal <img
+                                                            src="https://www.paypalobjects.com/webstatic/mktg/Logo/AM_mc_vs_ms_ae_UK.png"
+                                                            alt="PayPal acceptance mark"/><a
+                                                            href="https://www.paypal.com/gb/webapps/mpp/paypal-popup"
+                                                            class="about_paypal"
+                                                            onclick="javascript:window.open('https://www.paypal.com/gb/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;">What
+                                                        is PayPal?</a> </label>
+                                                </div>
+                                                <div class="payment_box payment_method_paypal" style="display:none;">
+                                                    <p>Pay via PayPal; you can pay with your credit card if you don&#8217;t
+                                                        have a PayPal account. SANDBOX ENABLED. You can use sandbox
+                                                        testing accounts only. See the <a
+                                                                href="https://developer.paypal.com/docs/classic/lifecycle/ug_sandbox/">PayPal
+                                                            Sandbox Testing Guide</a> for more details.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row place-order">
+                                            <noscript>
+                                                Since your browser does not support JavaScript, or it is disabled,
+                                                please ensure you click the &lt;em&gt;Update Totals&lt;/em&gt; button
+                                                before placing your order. You may be charged more than the amount
+                                                stated above if you fail to do so. <br/><input type="submit"
+                                                                                               class="button alt"
+                                                                                               name="woocommerce_checkout_update_totals"
+                                                                                               value="Update totals"/>
+                                            </noscript>
+
+                                            <div class="woocommerce-terms-and-conditions-wrapper">
+                                                <div class="woocommerce-privacy-policy-text"></div>
+                                            </div>
+
+
+                                            <input type="submit" class="ps-btn ps-btn--sm button alt"
+                                                   name="woocommerce_checkout_place_order" id="place_order"
+                                                   value="Place order" data-value="Place order"/>
+
+                                            <input type="hidden" id="woocommerce-process-checkout-nonce"
+                                                   name="woocommerce-process-checkout-nonce" value="f54dddd0b7"/><input
+                                                type="hidden" name="_wp_http_referer"
+                                                value="/wordpress/bakery/checkout/"/></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+</div><!--End .page-wrap-->
+
+<div th:insert="web/fragments/fragment.html::aboutUs"></div>
+<div th:insert="web/fragments/fragment.html::footerImport"></div>
+<div th:insert="web/fragments/fragment.html::underFooterImport"></div>
+<div th:insert="web/fragments/fragment.html::text_javascript"></div>
+</body>
+</html>

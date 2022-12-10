@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Products &#8211; Noucake</title>
+    <link rel="icon" href="/images/2017/06/favicon.png">
+    <link rel="icon" href="/images/2017/06/favicon.png">
+    <link rel="apple-touch-icon" href="/images/2017/06/favicon.png">
+    <th:block th:insert="web/fragments/fragment.html::headerImport"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::global-styles-inline-css"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::js-css"></th:block>
+
+</head>
+<body class="archive post-type-archive post-type-archive-product theme-noucake woocommerce-shop woocommerce woocommerce-page woocommerce-no-js page-init wpb-js-composer js-comp-ver-6.8.0 vc_responsive currency-usd">
+<th:block th:insert="web/fragments/fragment.html::table"></th:block>
+
+<div class="ps-searchbox">
+    <div class="ps-searchbox__remove"><i class="fa fa-remove"></i></div>
+    <div class="container">
+        <header>
+            <p>Enter your keywords:</p>
+            <form id="search_header" class="search_header_product " method="get"
+                  action="/bakery/">
+                <input class="form-control" type="text" value="" name="s" autocomplete="off">
+
+                <input type="hidden" name="post_type" value="product">
+                <button type="submit"><i class="ps-icon--search"></i></button>
+            </form>
+        </header>
+        <div class="ps-searchbox__result"></div>
+        <footer class="text-center"><a class="ps-searchbox__morelink" href="#">VIEW ALL RESULT</a></footer>
+    </div>
+</div>
+<div class="header--sidebar"></div>
+<header class="header" data-responsive="1199">
+
+    <th:block th:insert="web/fragments/fragment.html::USD-EURImport"></th:block>
+    <th:block th:insert="web/fragments/fragment.html::class-navigation-import"></th:block>
+
+</header>
+<nav class="ps-mobile-nav hidden-lg hidden-md">
+    <ul class="ps-list--footer">
+        <li><a href="/wishlist"><i class="ps-icon--heart"></i><span>Wishlist</span></a></li>
+
+        <li><a href="/my_account"><i class="ps-icon--profile"></i><span>Account</span></a></li>
+
+        <li><a class="ps-search-btn" href="#"><i class="ps-icon--search"></i><span>Search</span></a></li>
+
+        <li><a class="ps-cart-count" href="/cart"><i class="ps-icon--shopping-cart"></i><span
+                class="quantity"><i class="mobile_cart_content">0</i></span><span>Cart</span></a>
+        </li>
+    </ul>
+</nav>
+<div class="page-wrap">
+    <div class="ps-section--hero">
+        <img src="/assets/wp-content2/uploads/2017/06/slider-6.jpg" alt="productx">
+        <div class="ps-section__content text-center">
+            <h3 class="ps-section__title">productx</h3>
+
+            <div class="ps-breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="/">Home</a></li>
+                    <li class="active">Shop</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="ps-section--page  ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-lg-push-3 col-md-push-3">
+
+                    <div class="ps-shop-grid pt-80">
+
+                        <div class="ps-shop-features">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 ">
+                                    <a href="#">
+                                        <img class="mb-30" src="/assets/wp-content2/uploads/2017/06/012x.jpg"
+                                             alt="Shop banner">
+                                    </a>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 ">
+                                    <a href="#">
+                                        <img class="mb-30" src="/assets/wp-content2/uploads/2017/06/022x.jpg"
+                                             alt="Shop banner">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ps-shop-filter ">
+                            <div class="row">
+                                <div class="woocommerce-notices-wrapper"></div>
+                                <form class="woocommerce-ordering" method="get">
+                                    <div class="col-lg-5 col-md-4 col-sm-4 col-xs-12 ">
+                                        <div class="form-group">
+                                            <label>Short by:</label>
+                                            <select name="orderby" class="orderby ps-select">
+                                                <option value="menu_order" selected='selected'>Default sorting</option>
+                                                <option value="popularity">Sort by popularity</option>
+                                                <option value="rating">Sort by average rating</option>
+                                                <option value="date">Sort by latest</option>
+                                                <option value="price">Sort by price: low to high</option>
+                                                <option value="price-desc">Sort by price: high to low</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-4 col-sm-4 col-xs-12 ">
+                                        <div class="form-group">
+                                            <label>Show:</label>
+                                            <select class="ps-select" name="product_per_page" data-placeholder="Show:">
+                                                <option value="9" selected='selected'>9 Items</option>
+                                                <option value="12">12 Items</option>
+                                                <option value="15">15 Items</option>
+                                                <option value="18">18 Items</option>
+                                                <option value="21">21 Items</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 ">
+                                        <ul class="ps-shop-switch">
+                                            <li class="active"><a href="/?view=gird"><i
+                                                    class="fa fa-th"></i></a>
+                                            </li>
+                                            <li class=""><a href="/?view=list"><i class="fa fa-list"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="ps-shop ps-col-tiny products">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 post-181 product type-product status-publish has-post-thumbnail product_cat-clothing product_cat-hoodies first instock shipping-taxable purchasable product-type-simple"
+                                     th:each="product: ${products}">
+                                    <div class="ps-product" data-mh="abc">
+                                        <div class="ps-product__thumbnail">
+                                            <a
+                                                    th:href="@{'/products/product/single-page/' + ${product.id}}">
+                                                <img th:if="${product.productPic != null}"
+                                                     th:src="@{/products/getImage(fileName=${product.productPic})}"></a>
+                                            <ul class="ps-product__action">
+
+                                                <li><a data-product_id="181" class="product-quickview popup-modal"
+                                                       href="#quickview-modal" data-effect="mfp-zoom-out"
+                                                       data-tooltip="View"><i class="ps-icon--search"></i></a></li>
+
+                                                <li>
+                                                    <a class="product-wishlist "
+                                                       th:attr="data-product_id=${product.id}"  href="#"
+                                                       data-tooltip="Add to wishlist"><i class="ps-icon--heart"></i></a>
+                                                </li>
+
+                                                <li><a class="product-compare" data-product_id="181" href="#"
+                                                       data-tooltip="Compare"><i class="ps-icon--reload"></i></a></li>
+
+                                                <li>
+                                                    <a rel="nofollow" href="/?add-to-cart=181"
+                                                       data-quantity="1"
+                                                       th:attr="data-product_id=${product.id}"
+                                                       data-product_sku="HGEGX27"
+                                                       class="product-item-cart button product_type_simple add_to_cart_button ajax_add_to_cart"
+                                                       data-tooltip="Add to cart">
+                                                        <i class="ps-icon--shopping-cart"></i></a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="ps-product__content">
+                                            <a th:href="@{'/products/single-page/' + ${product.id}}"
+                                               class="ps-product__title" th:text="${product.name}">
+                                                Becky&#8217;s Snickqerdoodle </a>
+                                            <select class="ps-rating rating-0">
+                                                <option value="0" selected='selected'>0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                            <p class="ps-product__price" th:text="${product.price+'$'}"><span
+                                                    class="woocs_price_code"
+                                                    data-product-id="181"><span
+                                                    class="woocommerce-Price-amount amount"><bdi><span
+                                                    class="woocommerce-Price-currencySymbol">&#36;</span>35.00</bdi></span></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="pagination" th:if="${products.totalPages > 0}"
+                             th:each="pageNumber : ${pageNumbers}">
+                            <a th:href="@{/products/shop(size=${products.size}, page=${pageNumber})}"
+                               th:text="${pageNumber}"
+                               th:class="${pageNumber==products.number + 1} ? active">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div><!--End .page-wrap-->
+<div th:insert="web/fragments/fragment.html::aboutUs"></div>
+<div th:insert="web/fragments/fragment.html::footerImport"></div>
+<div th:insert="web/fragments/fragment.html::underFooterImport"></div>
+<div th:insert="web/fragments/fragment.html::text_javascript"></div>
+
+</body>
+</html>

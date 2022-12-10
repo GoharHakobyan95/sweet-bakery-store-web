@@ -1,0 +1,127 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>::eBakery:: Dashboard</title>
+    <link rel="icon" href="/admin/favicon.ico" type="image/x-icon"> <!-- Favicon-->
+
+    <!-- plugin css file  -->
+    <link rel="stylesheet" href="/admin/dist/assets/plugin/datatables/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="/admin/dist/assets/plugin/datatables/dataTables.bootstrap5.min.css">
+    <!-- project css file  -->
+    <link rel="stylesheet" href="/ebazar.style.min.css">
+</head>
+
+<body>
+<div id="ebazar-layout" class="theme-blue">
+
+    <!-- sidebar -->
+    <div th:insert="/admin/fragments/fragment::slidebar"></div>
+    <!-- main body area -->
+    <div class="main px-lg-4 px-md-4">
+        <div th:insert="/admin/fragments/fragment::headerImport"></div>
+
+        <div class="row align-items-center">
+            <div class="border-0 mb-4">
+                <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
+                    <h3 class="fw-bold mb-0">Categorie List</h3>
+                    <a href="/admin/categories-add"
+                       class="btn btn-primary py-2 px-5 btn-set-task w-sm-100"><i
+                            class="icofont-plus-circle me-2 fs-6"></i> Add Categories</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-3 mb-3">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div id="myDataTable_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div role="alert" class="alert alert-danger" th:if="${deleteErrorMessage !=null}"
+                                         th:text="${deleteErrorMessage}">
+                                    </div>
+                                    <table id="myDataTable"
+                                           class="table table-hover align-middle mb-0 nowrap dataTable no-footer dtr-inline"
+                                           style="width: 100%;" role="grid" aria-describedby="myDataTable_info">
+                                        <thead>
+
+                                        <tr role="row">
+                                            <th class="sorting_asc" tabindex="0" aria-controls="myDataTable" rowspan="1"
+                                                colspan="1" style="width: 70.19999980926514px;" aria-sort="ascending"
+                                                aria-label="Id: activate to sort column descending">Id
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="myDataTable" rowspan="1"
+                                                colspan="1" style="width: 198.19999980926514px;"
+                                                aria-label="Categorie: activate to sort column ascending">Categorie
+                                            </th>
+                                            <th class="dt-body-right sorting" tabindex="0" aria-controls="myDataTable"
+                                                rowspan="1" colspan="1" style="width: 199.19999980926514px;"
+                                                aria-label="Date: activate to sort column ascending">Description
+                                            </th>
+                                            <th class="dt-body-right sorting" tabindex="0" aria-controls="myDataTable"
+                                                rowspan="1" colspan="1" style="width: 199.19999980926514px;"
+                                                aria-label="Date: activate to sort column ascending">Action
+                                            </th>
+
+                                        </thead>
+                                        <tbody>
+
+                                        <tr role="row" class="odd" th:each="category, iter: ${categories}">
+                                            <td th:text="${iter.index+1}" tabindex="0" class="sorting_1">
+                                                <strong>#0001</strong></td>
+                                            <td th:text="${category.name}">Name</td>
+                                            <td>
+                                                <textarea th:utext="${category.description}"
+                                                          style="height: 150px;width: 300px; border: hidden"></textarea>
+                                            </td>
+
+                                            <td class=" dt-body-right">
+                                                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                                    <a th:href="@{/admin/categories-edit(id=${category.id})}"
+                                                       class="btn btn-outline-secondary"><i
+                                                            class="icofont-edit text-success"></i></a>
+                                                    <a th:href="@{'/admin/categories/delete/'+${category.id}}">
+                                                        <button type="button"
+                                                                class="btn btn-outline-secondary deleterow"><i
+                                                                class="icofont-ui-delete text-danger"></i></button>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <div th:if="${categories.totalPages > 0}" class="page"
+                                         th:each="pageNumber : ${pageNumbers}">
+                                        <a th:href="@{/admin/categories(size=${categories.size}, page=${pageNumber})}"
+                                           th:text="${pageNumber}"
+                                           th:class="${pageNumber==categories.number + 1} ? active"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Row end  -->
+<!-- Jquery Core Js -->
+<script src="/admin/dist/assets/bundles/libscripts.bundle.js"></script>
+<!-- Plugin Js -->
+<script src="/admin/dist/assets/bundles/apexcharts.bundle.js"></script>
+<script src="/admin/dist/assets/bundles/dataTables.bundle.js"></script>
+<script src="/admin/dist/assets/js/page/index.js"></script>
+<script src="/admin/maps/api/js?key=AIzaSyB1Jr7axGGkwvHRnNfoOzoVRFV3yOPHJEU&callback=myMap"></script>
+<!-- Jquery Page Js -->
+<script src="/admin/dist/assets/js/template.js"></script>
+
+</body>
+
+</html>
