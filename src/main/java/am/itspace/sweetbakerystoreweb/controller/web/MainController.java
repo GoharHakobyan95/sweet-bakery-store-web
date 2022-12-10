@@ -2,7 +2,6 @@ package am.itspace.sweetbakerystoreweb.controller.web;
 
 import am.itspace.sweetbakerystorecommon.entity.Role;
 import am.itspace.sweetbakerystorecommon.entity.User;
-//import am.itspace.sweetbakerystorecommon.service.AddressService;
 import am.itspace.sweetbakerystorecommon.service.CityService;
 import am.itspace.sweetbakerystorecommon.service.UserService;
 import am.itspace.sweetbakerystoreweb.security.CurrentUser;
@@ -28,7 +27,6 @@ import java.util.Optional;
 public class MainController {
 
     private final UserService userService;
-//    private final AddressService addressService;
     private final CityService cityService;
 
     @GetMapping(value = "/")
@@ -70,14 +68,15 @@ public class MainController {
                           @RequestParam("addressName") String addressName,
                           @RequestParam("cityId") int cityId,
                           ModelMap modelMap
-                          ) throws IOException {
-//        Optional<User> byEmail = userService.findByEmail(user.getEmail());
+    ) throws IOException {
+        Optional<User> byEmail = userService.findByEmail(user.getEmail());
         if (result.hasErrors()) {
             modelMap.addAttribute("cities", cityService.findAll());
+            modelMap.addAttribute("addressName", addressName);
             return "register";
-//        } else if (byEmail.isPresent()) {
-//            modelMap.addAttribute("errorMessage", "Email Already in use");
-//            return "register";
+        } else if (byEmail.isPresent()) {
+            modelMap.addAttribute("errorMessage", "Email Already in use");
+            return "register";
         } else {
             if (!file.isEmpty() && file.getSize() > 0) {
                 if (file.getContentType() != null && !file.getContentType().contains("image")) {
@@ -85,7 +84,7 @@ public class MainController {
                     return "register";
                 }
             }
-//            userService.saveUser(user, cityId, addressName, file);
+            userService.saveUser(user, cityId, addressName, file);
             log.info("User with username {} registered", user.getEmail());
             return "redirect:/login";
         }

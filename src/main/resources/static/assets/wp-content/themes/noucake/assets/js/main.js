@@ -1116,7 +1116,9 @@
                     contentType: "application/json",
                     success: function (data) {
                         if (data) {
-                            $('#noubakery_mini_cart').html(data.html);
+                            $('#noubakery_mini_cart').load('/basket',function(data){
+                                $('#noubakery_mini_cart').html(data.html);
+                            });
                         }
                     },
                 });

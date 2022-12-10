@@ -150,9 +150,9 @@
                                                        href="#quickview-modal" data-effect="mfp-zoom-out"
                                                        data-tooltip="View"><i class="ps-icon--search"></i></a></li>
 
-                                                <li>
+                                                <li th:if="${currentUser != null}">
                                                     <a class="product-wishlist "
-                                                       th:attr="data-product_id=${product.id}"  href="#"
+                                                       th:attr="data-product_id=${product.id}" href="#"
                                                        data-tooltip="Add to wishlist"><i class="ps-icon--heart"></i></a>
                                                 </li>
 

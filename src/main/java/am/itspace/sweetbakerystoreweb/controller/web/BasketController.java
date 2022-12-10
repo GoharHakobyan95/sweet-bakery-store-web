@@ -59,14 +59,14 @@ public class BasketController {
 
     @ResponseBody
     @PostMapping(value = "/remove/basket")
-    public ResponseEntity<BasketProductDto> removeBasket(@RequestBody BasketRequest basketRequest) {
+    public ResponseEntity<List<BasketProductDto>> removeBasket(@RequestBody BasketRequest basketRequest) {
         productService.findById(basketRequest.getProduct_id()).ifPresent((p) -> {
             if (basketDto != null) {
                 basketDto.removeSingleProduct(p.getId());
                 basketDto.calculateTotal();
             }
         });
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(basketDto.getBasketProductDtos());
     }
 }
 
