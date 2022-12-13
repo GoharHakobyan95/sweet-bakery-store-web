@@ -2,7 +2,7 @@ package am.itspace.sweetbakerystoreweb.controller.web;
 
 import am.itspace.sweetbakerystorecommon.dto.CheckoutDto;
 import am.itspace.sweetbakerystorecommon.service.PaymentService;
-import am.itspace.sweetbakerystoreweb.security.CurrentUser;
+import am.itspace.sweetbakerystorecommon.security.CurrentUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;

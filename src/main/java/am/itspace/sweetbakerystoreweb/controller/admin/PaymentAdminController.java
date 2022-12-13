@@ -2,7 +2,7 @@ package am.itspace.sweetbakerystoreweb.controller.admin;
 
 import am.itspace.sweetbakerystorecommon.entity.Payment;
 import am.itspace.sweetbakerystorecommon.service.PaymentService;
-import am.itspace.sweetbakerystoreweb.security.CurrentUser;
+import am.itspace.sweetbakerystorecommon.security.CurrentUser;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;

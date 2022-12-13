@@ -3,7 +3,7 @@ package am.itspace.sweetbakerystoreweb.controller;
 
 import am.itspace.sweetbakerystorecommon.dto.BasketDto;
 import am.itspace.sweetbakerystorecommon.entity.User;
-import am.itspace.sweetbakerystoreweb.security.CurrentUser;
+import am.itspace.sweetbakerystorecommon.security.CurrentUser;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;

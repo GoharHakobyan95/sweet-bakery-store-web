@@ -4,7 +4,7 @@ import am.itspace.sweetbakerystorecommon.entity.Product;
 import am.itspace.sweetbakerystorecommon.entity.Review;
 import am.itspace.sweetbakerystorecommon.service.ProductService;
 import am.itspace.sweetbakerystorecommon.service.ReviewService;
-import am.itspace.sweetbakerystoreweb.security.CurrentUser;
+import am.itspace.sweetbakerystorecommon.security.CurrentUser;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
