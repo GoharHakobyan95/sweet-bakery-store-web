@@ -100,7 +100,7 @@ public class CategoryAdminController {
                          ModelMap modelMap,
                          @AuthenticationPrincipal CurrentUser currentUser) {
         try {
-            categoryService.deleteById(id);
+            categoryService.deleteById(id, currentUser);
         } catch (Exception e) {
             modelMap.addAttribute("deleteErrorMessage", "You can not delete this object because there is some relationships with it.");
             return "admin/categories";

@@ -37,7 +37,7 @@
         <!--End-->
 
         <!--    User entity-->
-        <createTable tableName="user" remarks="User Data">
+        <createTable tableName="users" remarks="User Data">
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
@@ -75,7 +75,7 @@
         </createTable>
         <addForeignKeyConstraint
                 baseColumnNames="address_id"
-                baseTableName="user"
+                baseTableName="users"
                 constraintName="fk_user_address_id"
                 referencedTableName="address"
                 referencedColumnNames="id"/>
@@ -112,7 +112,7 @@
                 baseColumnNames="user_id"
                 baseTableName="payment"
                 constraintName="fk_payment_user_id"
-                referencedTableName="user"
+                referencedTableName="users"
                 referencedColumnNames="id"/>
         <!--End-->
 
@@ -135,7 +135,7 @@
                 baseColumnNames="user_id"
                 baseTableName="category"
                 constraintName="fk_category_user_id"
-                referencedTableName="user"
+                referencedTableName="users"
                 referencedColumnNames="id"/>
         <!--End-->
 
@@ -170,7 +170,7 @@
                 baseColumnNames="user_id"
                 baseTableName="product"
                 constraintName="fk_product_user_id"
-                referencedTableName="user"
+                referencedTableName="users"
                 referencedColumnNames="id"/>
         <addForeignKeyConstraint
                 baseColumnNames="category_id"
@@ -214,7 +214,7 @@
                 baseColumnNames="user_id"
                 baseTableName="user_order"
                 constraintName="fk_user_order_user_id"
-                referencedTableName="user"
+                referencedTableName="users"
                 referencedColumnNames="id"/>
         <addForeignKeyConstraint
                 baseColumnNames="product_id"
@@ -258,7 +258,7 @@
                 baseColumnNames="user_id"
                 baseTableName="review"
                 constraintName="fk_review_user_id"
-                referencedTableName="user"
+                referencedTableName="users"
                 referencedColumnNames="id"/>
         <addForeignKeyConstraint
                 baseColumnNames="product_id"
@@ -287,7 +287,7 @@
                 baseColumnNames="user_id"
                 baseTableName="favorite_product"
                 constraintName="fk_favorite_product_user_id"
-                referencedTableName="user"
+                referencedTableName="users"
                 referencedColumnNames="id"/>
         <addForeignKeyConstraint
                 baseColumnNames="product_id"

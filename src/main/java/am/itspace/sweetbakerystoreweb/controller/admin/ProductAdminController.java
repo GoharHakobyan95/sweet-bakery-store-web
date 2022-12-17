@@ -1,4 +1,5 @@
 package am.itspace.sweetbakerystoreweb.controller.admin;
+
 import am.itspace.sweetbakerystorecommon.entity.Product;
 import am.itspace.sweetbakerystorecommon.service.CategoryService;
 import am.itspace.sweetbakerystorecommon.service.ProductService;
@@ -89,7 +90,7 @@ public class ProductAdminController {
         if (result.hasErrors()) {
             return "admin/products-add";
         }
-        productService.save(product, file, currentUser.getUser());
+        productService.saveProduct(product, file, currentUser.getUser());
         log.info("Controller admin/products-add added by {}", currentUser.getUser().getEmail());
         return "redirect:/admin/products";
     }
@@ -129,7 +130,7 @@ public class ProductAdminController {
             return "admin/products-edit";
         }
         log.info("Controller admin/products-edit update by {}", currentUser.getUser().getEmail());
-        productService.save(product, file, currentUser.getUser());
+        productService.saveProduct(product, file, currentUser.getUser());
         return "redirect:/admin/products";
     }
 
