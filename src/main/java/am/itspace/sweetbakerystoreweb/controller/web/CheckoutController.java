@@ -1,6 +1,6 @@
 package am.itspace.sweetbakerystoreweb.controller.web;
 
-import am.itspace.sweetbakerystorecommon.dto.CheckoutDto;
+import am.itspace.sweetbakerystorecommon.dto.orderDto.CheckoutDto;
 import am.itspace.sweetbakerystorecommon.service.PaymentService;
 import am.itspace.sweetbakerystorecommon.security.CurrentUser;
 import lombok.RequiredArgsConstructor;
