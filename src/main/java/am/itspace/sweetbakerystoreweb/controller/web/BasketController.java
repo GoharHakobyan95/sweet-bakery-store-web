@@ -1,8 +1,8 @@
 package am.itspace.sweetbakerystoreweb.controller.web;
 
-import am.itspace.sweetbakerystorecommon.dto.BasketDto;
-import am.itspace.sweetbakerystorecommon.dto.BasketProductDto;
-import am.itspace.sweetbakerystorecommon.dto.BasketRequest;
+import am.itspace.sweetbakerystorecommon.dto.basketDto.BasketDto;
+import am.itspace.sweetbakerystorecommon.dto.basketDto.BasketProductDto;
+import am.itspace.sweetbakerystorecommon.dto.basketDto.BasketRequest;
 import am.itspace.sweetbakerystorecommon.entity.Product;
 import am.itspace.sweetbakerystorecommon.service.ProductService;
 import lombok.RequiredArgsConstructor;
